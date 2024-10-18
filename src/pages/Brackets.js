@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const URL = 'https://raw.githubusercontent.com/ShidemantleJ/cccweb/master/public/json/data.json';
+const URL = 'https://raw.githubusercontent.com/ShidemantleJ/cccweb/refs/heads/master/public/json/data.json';
 
 async function render() {
   let data;

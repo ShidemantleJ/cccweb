@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './MatchViewer.css';
 
-function tableHeader(i) {
+function tableHeader(i, data) {
   return (
     <>
     <tr>
@@ -13,7 +13,7 @@ function tableHeader(i) {
   )
 }
 
-function matchupData(i) {
+function matchupData(i, data) {
   const elements = [];
   for (let j = 0; j < 7; j++) {
     if (data.at(i*7+j)['Competitor #1 Time'] === "" || data.at(i*7+j)['Competitor #2 Time'] === "") {
@@ -31,42 +31,44 @@ function matchupData(i) {
   return elements;
 }
 
-function retTable() {
+function retTable(data) {
   const elements = [];
 
   for (let i = 0; i < 3; i++) {
     elements.push(
       <table className="match-table">
         <thead>
-        {tableHeader(i)}
+        {tableHeader(i, data)}
         </thead>
         <tbody>
-        {matchupData(i)}
+        {matchupData(i, data)}
         </tbody>
       </table>
     )
   }
   return elements;
 }
-function MatchViewer () {
+
+function MatchViewer (props) {
   const [data, setData] = useState(null);
+
+  async function fetchData() {
+    const response = await fetch('/data/' + props.matchId + '.json');
+    const result = await response.json();
+    setData(result);
+  }
 
   useEffect(() => {
     fetchData();
   }, []);
-
-  async function fetchData() {
-    const response = await fetch('https://cccweb-blue.vercel.app/data/1.json');
-    const result = await response.json();
-    setData(result);
-  }
 
   if (!data) return <div>Loading...</div>;
 
   return (
     <>
       <h1>{data.at(0)['Team #1 Name'] + " vs " + data.at(0)['Team #2 Name']}</h1>
-      {retTable()}
+      <h2>{data.at(0)['Match Date and Time']}</h2>
+      {retTable(data)}
     </>
   );
 }

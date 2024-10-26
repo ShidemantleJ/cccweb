@@ -1,23 +1,34 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import data from '../data/bracket_db.json'
-
-async function render() {
-  window.bracketsViewer.render({
-    stages: data.stage,
-    matches: data.match,
-    participants: data.participant,
-    matchGames: data.match_game,
-  }, {
-    onMatchClick: match => console.log("a match was clicked", match),
-  }
-  );
-}
+import MatchViewer from '../components/MatchViewer';
+import { useNavigate } from 'react-router-dom';
 
 const Brackets = () => {
-    useEffect(() => {
-      render();
-    }, []);
-    return <div className="brackets-viewer"></div>
-};
+  const [match, setMatch] = useState(null);
+  const [matchClicked, setMatchClicked] = useState(false);
+  const navigate = useNavigate();
+
+  function toggleMatchClicked() {
+    setMatchClicked(!matchClicked);
+  }
+
+  useEffect(() => {
+    window.bracketsViewer.render({
+      stages: data.stage,
+      matches: data.match,
+      participants: data.participant,
+      matchGames: data.match_game,
+    }, {
+      onMatchClick: (clickedMatch) => {
+        console.log("a match was clicked", String(clickedMatch.id));
+        setMatch(clickedMatch);
+        navigate(`/matches/${clickedMatch.id}`);
+      }
+    }
+    );
+  }, [navigate]);
+
+  return <div className="brackets-viewer"></div>;
+}
 
 export default Brackets;

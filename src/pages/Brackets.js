@@ -1,35 +1,23 @@
-import React, { useEffect } from 'react';
-
-const URL = 'https://raw.githubusercontent.com/ShidemantleJ/cccweb/refs/heads/master/public/json/data.json';
+import React, {useEffect} from 'react';
+import data from '../data/bracket_db.json'
 
 async function render() {
-  let data;
-  try {
-    data = await fetch(URL).then(res => res.json());
-  }
-  catch (e) {
-    console.error(e);
-  }
-
   window.bracketsViewer.render({
     stages: data.stage,
     matches: data.match,
-    matchGames: data.match_game,
     participants: data.participant,
-  });
+    matchGames: data.match_game,
+  }, {
+    onMatchClick: match => console.log("a match was clicked", match),
+  }
+  );
 }
 
-function Brackets() {
-  useEffect(() => {
-    try {
+const Brackets = () => {
+    useEffect(() => {
       render();
-    }
-    catch (e) {
-      console.error(e);
-    }
-  }, []);
-  
-  return <div className="brackets-viewer"></div>
-}
+    }, []);
+    return <div className="brackets-viewer"></div>
+};
 
 export default Brackets;

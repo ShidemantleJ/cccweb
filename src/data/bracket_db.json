@@ -1,5 +1,4 @@
 {
-  "0": {
     "participant": [
       {
         "id": 0,
@@ -84,7 +83,7 @@
       {
         "id": 16,
         "tournament_id": 0,
-        "name": "FSU"
+        "name": "UCSB"
       },
       {
         "id": 17,
@@ -149,7 +148,7 @@
       {
         "id": 29,
         "tournament_id": 0,
-        "name": "UCSB"
+        "name": "FSU"
       },
       {
         "id": 30,
@@ -1188,4 +1187,3 @@
     ],
     "match_game": []
   }
-}

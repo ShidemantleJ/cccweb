@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './MatchViewer.css';
-import data from '../data/1.json';
 
 function tableHeader(i) {
   return (
@@ -50,6 +49,20 @@ function retTable() {
   return elements;
 }
 function MatchViewer () {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  async function fetchData() {
+    const response = await fetch('https://cccweb-blue.vercel.app/data/1.json');
+    const result = await response.json();
+    setData(result);
+  }
+
+  if (!data) return <div>Loading...</div>;
+
   return (
     <>
       <h1>{data.at(0)['Team #1 Name'] + " vs " + data.at(0)['Team #2 Name']}</h1>

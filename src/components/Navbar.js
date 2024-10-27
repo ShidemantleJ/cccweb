@@ -17,7 +17,6 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
-        <Link to="/matches">Matches</Link>
         <Link to="/brackets">Brackets</Link>
       </div>
       <div className="hamburger" onClick={toggleMenu}>

@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import data from '../data/bracket_db.json'
-import MatchViewer from '../components/MatchViewer';
 import { useNavigate } from 'react-router-dom';
 
 const Brackets = () => {

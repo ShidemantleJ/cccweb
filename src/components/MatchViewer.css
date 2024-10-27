@@ -18,38 +18,40 @@ h2 {
     width: 80%;
     border-collapse: collapse;
     margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #404040;
+    border-radius: 8px;
 }
 
 .match-table th,
 .match-table td {
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #d1d1d1;
 }
 
 .match-table th {
-    background-color: #f8f8f8;
-    color: #333333;
+    background-color: #404040;
+    color: #ffffff;
     font-weight: 600;
-}
-
-.match-table tr {
-    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .match-table tr:hover {
-    background-color: #f0f0f0;
     cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #aaa8a8;
 }
 
-.match-table tr:nth-child(even) {
-    background-color: #fafafa;
-}
-
-.match-table tr:nth-child(even):hover {
-    background-color: #f0f0f0;
+.errImg {
+    height: 30%;
+    width: 30%;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 @media screen and (max-width: 768px) {

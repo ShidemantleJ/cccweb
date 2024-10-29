@@ -1,10 +1,11 @@
 // pages/About.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Home.css';
 
 const About = () => {
   return (
-    <div>
+    <div class="home-header">
       <h1>About the Competition</h1>
       <p>The Collegiate Cubing Championship is a project from the University of Alabama's Cubing Club, Alabama Crimson Cubing. Starting in January, matches will be organized between teams comprised of 3 members of each of 32 college cubing clubs across the United States.</p>
       <h1>About the Organizers</h1>

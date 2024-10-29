@@ -1,9 +1,8 @@
 import React from 'react';
-import data from '../data/match-data.json';
-import TeamViewer from '../components/TeamViewer';
+import CompetitorViewer from '../components/CompetitorViewer';
 import {useParams, useNavigate} from 'react-router-dom';
 
-const TeamStatistics = () => {
+const CompetitorStatistics = () => {
     let params = useParams();
     let navigate = useNavigate();
 
@@ -21,9 +20,9 @@ const TeamStatistics = () => {
     return (
         <>
         <button style={buttonStyle} onClick={() => navigate(-1)}>Back</button>
-        <TeamViewer teamName={params.teamName} />
+        <CompetitorViewer competitorName={params.competitorName} />
         </>
     );
 }
 
-export default TeamStatistics;
+export default CompetitorStatistics;

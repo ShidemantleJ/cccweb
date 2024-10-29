@@ -8,15 +8,16 @@ function TeamViewer(props) {
 
     const teamName = props.teamName;
     const matches = data.matches.filter(match => match.team1.teamName === teamName || match.team2.teamName === teamName);
-    const isTeam1 = matches[0].team1.teamName === teamName;
     
     if (!matches) {
         return <h1>Team not found</h1>;
     }
+
+    const isTeam1 = matches[0].team1.teamName === teamName;
     matches.sort((a, b) => new Date(a.matchDateTime) - new Date(b.matchDateTime));
 
     return (
-        <div>v
+        <div>
             <h1>Team Name: {teamName}</h1>
             <h2>Team Members:</h2>
             <table className="team-table">

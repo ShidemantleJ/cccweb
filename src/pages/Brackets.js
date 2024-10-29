@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import data from '../data/bracket_db.json'
 import matchdata from '../data/match-data.json'
 import { useNavigate } from 'react-router-dom';
+import './Home.css'
 
 const Brackets = () => {
   const [match, setMatch] = useState(null);
@@ -28,7 +29,15 @@ const Brackets = () => {
     );
   }, [navigate]);
 
-  return <div className="brackets-viewer"></div>;
+  return (
+  <>
+  <div className="home-header">
+    <h1>Group Stage Bracket</h1>
+    <p>Click on any completed match to see detailed match info</p>
+  </div>
+    <div className="brackets-viewer"></div>
+  </>
+  );
 }
 
 export default Brackets;

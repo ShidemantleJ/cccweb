@@ -395,11 +395,15 @@
         "status": 2,
         "opponent1": {
           "id": 16,
-          "position": 17
+          "position": 17,
+          "score": 0,
+          "result": "loss"
         },
         "opponent2": {
           "id": 15,
-          "position": 16
+          "position": 16,
+          "score": 3,
+          "result": "win"
         }
       },
       {

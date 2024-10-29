@@ -1,0 +1,75 @@
+/* TeamViewer.css */
+.match-display {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.individual-match {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.individual-match:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.team-table {
+    width: 30%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    border: 2px solid #404040;
+    border-radius: 8px;
+}
+
+.team-table th,
+.team-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.team-table th {
+    background-color: #404040;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.team-table tr:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #aaa8a8;
+}
+
+.errImg {
+    height: 30%;
+    width: 30%;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .team-table {
+        width: 95%;
+        font-size: 14px;
+    }
+    
+    .team-table th,
+    .team-table td {
+        padding: 8px;
+    }
+}

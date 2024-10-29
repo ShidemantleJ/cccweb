@@ -6,6 +6,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Brackets from './pages/Brackets';
 import Matches from './pages/Matches';
+import TeamStatistics from './pages/TeamStatistics'
+import Statistics from './pages/Statistics';
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/matches/:matchId" element={<Matches />} />
-        <Route path="/matches" element={<Matches />} />
+        <Route path="/teamstatistics/:teamName" element={<TeamStatistics />} />
         <Route path="/brackets" element={<Brackets />} />
+        <Route path="/statistics" element={<Statistics />} />
+        <Route path="/teamstatistics" element={<TeamStatistics />} />
       </Routes>
     </Router>
   );

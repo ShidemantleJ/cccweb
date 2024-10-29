@@ -1,33 +1,9 @@
 import React, {useState} from 'react';
 import data from "../data/match-data.json";
-import { ScrambleDisplay } from 'scramble-display';
+import {ScrambleDisplay} from 'scramble-display';
 import './MatchViewer.css';
+import {getSetsWon} from '../StatFunctions/MatchStats'
 
-function getResult(match) {
-  let setsWon = [0, 0]
-  let team1solves = 0;
-  let team2solves = 0;
-  for (let i = 0; i < 3; i++) {
-    team1solves = 0;
-    team2solves = 0;
-    for (let j = 0; j < 7; j++) {
-      if (match.team1.times[i][j] === undefined || match.team2.times[i][j] === undefined) {
-        break;
-      }
-      if (match.team1.times[i][j] < match.team2.times[i][j]) {
-        team1solves++;
-      } else if (match.team1.times[i][j] > match.team2.times[i][j]) {
-        team2solves++;
-      }
-    }
-    if (team1solves > team2solves) {
-      setsWon[0]++;
-    } else if (team2solves > team1solves) {
-      setsWon[1]++;
-    }
-  }
-  return setsWon;
-}
 
 function tableHeader(match, i) {
   return (
@@ -98,7 +74,7 @@ function MatchViewer (props) {
     return (
       <>
       <h1>Match Not Found</h1>
-      <img className="errImg" src="/images/error.jpg" />
+      <img className="errImg" alt="error image" src="/images/error.jpg" />
       </>
     );
   }
@@ -106,11 +82,12 @@ function MatchViewer (props) {
   const rawDate = new Date(match.matchDateTime);
   const date = rawDate.toLocaleDateString();
   const time = rawDate.toLocaleTimeString();
-  const setsWon = getResult(match);
+  const setsWonT1 = getSetsWon(match.team1.teamName, match);
+  const setsWonT2 = getSetsWon(match.team2.teamName, match);
 
   return (
     <>
-      <h1>{"[" + setsWon[0] + "] " + match.team1.teamName + " vs " + match.team2.teamName + " [" + setsWon[1] + "]"}</h1>
+      <h1>{"[" + setsWonT1 + "] " + match.team1.teamName + " vs " + match.team2.teamName + " [" + setsWonT2 + "]"}</h1>
       <h2>{date + " at " + time}</h2>
       {retTable(match, setSelectedScramble, selectedScramble)}
     </>

@@ -15,9 +15,10 @@ const Navbar = () => {
       <div className="nav-logo">Collegiate Cubing Championship</div>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
         <Link to="/brackets">Brackets</Link>
+        <Link to="/statistics">Statistics</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/about">About</Link>
       </div>
       <div className="hamburger" onClick={toggleMenu}>
         <span className="bar"></span>

@@ -28,7 +28,7 @@ function tableHeader(match, i) {
             <td className={team1Won ? 'lost' : 'won'}>{t2currTime === -1 ? "DNF" : t2currTime.toFixed(2)}</td>
             <td>{match.scrambles[i][j]}</td>
           </tr>
-          {selectedScramble === match.scrambles[i][j] && (selectedScramble !== undefined || selectedScramble !== "") && (
+          {selectedScramble === match.scrambles[i][j] && selectedScramble !== undefined && selectedScramble !== "" && (
             <tr key={`scramble-${i}-${j}`}>
               <td colSpan="3"><scramble-display scramble={match.scrambles[i][j]}></scramble-display></td>
             </tr>

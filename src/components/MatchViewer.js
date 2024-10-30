@@ -3,9 +3,10 @@ import data from "../data/match-data.json";
 import {ScrambleDisplay} from 'scramble-display';
 import './MatchViewer.css';
 import {getSetsWon} from '../StatFunctions/MatchStats'
-import {retTable} from '../StatFunctions/TableFunctions';
+import {FullMatchTable} from '../StatFunctions/TableFunctions';
+import errImg from '../images/error.jpg';
 
-function MatchViewer (props) {
+export default function MatchViewer (props) {
   const match = data.matches.find(match => match.matchId === props.matchId);
   const [selectedScramble, setSelectedScramble] = useState(null);
 
@@ -13,7 +14,7 @@ function MatchViewer (props) {
     return (
       <>
       <h1>Match Not Found</h1>
-      <img className="errImg" alt="error image" src="/images/error.jpg" />
+      <img className="errImg" alt="Error" src={errImg} />
       </>
     );
   }
@@ -26,11 +27,9 @@ function MatchViewer (props) {
 
   return (
     <>
-      <h1>{"[" + setsWonT1 + "] " + match.team1.teamName + " vs " + match.team2.teamName + " [" + setsWonT2 + "]"}</h1>
+      <h1>{"[" + setsWonT1 + "] "}<a className="team-links" href={`/teamstatistics/${match.team1.teamName}`}>{match.team1.teamName}</a>{" vs "}<a className="team-links" href={`/teamstatistics/${match.team2.teamName}`}>{match.team2.teamName}</a>{" [" + setsWonT2 + "]"}</h1>
       <h2>{date + " at " + time}</h2>
-      {retTable(match, setSelectedScramble, selectedScramble)}
+      {<FullMatchTable match={match} selectedScramble={selectedScramble} setSelectedScramble={setSelectedScramble} />}
     </>
   );
 }
-
-export default MatchViewer;

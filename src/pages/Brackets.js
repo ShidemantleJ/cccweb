@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import data from '../data/bracket_db.json'
-import matchdata from '../data/match-data.json'
 import { useNavigate } from 'react-router-dom';
 import './Home.css'
 

@@ -1,0 +1,164 @@
+[
+    {
+        "schoolName": "University of Texas at Austin",
+        "clubName": "Longhorn Cubing Club",
+        "members": [
+            [
+                "Jeremy Sheng",
+                "2019SHEN10"
+            ],
+            [
+                "Jason Lee",
+                "2015LEEJ12"
+            ],
+            [
+                "Azhar Virani",
+                "2015VIRA02"
+            ]
+        ]
+    },
+    {
+        "schoolName": "Miami Univerisy",
+        "clubName": "Miami University Cubing Association",
+        "members": [
+            [
+                "Harsha Paladugu",
+                "2017PALA08"
+            ],
+            [
+                "Emery McFeeter",
+                "2019MCFE01"
+            ],
+            [
+                "Joey Reindl",
+                "2023REIN03"
+            ]
+        ]
+    },
+    {
+        "schoolName": "University of California, Davis",
+        "clubName": "Davis Cube Club",
+        "members": [
+            [
+                "Jacob Marinas",
+                "2016MARI14"
+            ],
+            [
+                "Yuki Nomura",
+                "2019NOMU01"
+            ],
+            [
+                "Brandon Lugtu",
+                "2012LUGT01"
+            ]
+        ]
+    },
+    {
+        "schoolName": "University of Houston",
+        "clubName": "UH Cubing Club",
+        "members": [
+            [
+                "Derek Herrera",
+                "2018HERR19"
+            ],
+            [
+                "Thomas Tran",
+                "2016THAN01"
+            ],
+            [
+                "Jacob Nguyen",
+                "2018NGUY05"
+            ]
+        ]
+    },
+    {
+        "schoolName": "UW Madison",
+        "clubName": "Rubik's Cube Club - UW Madison",
+        "members": [
+            [
+                "Zeke Mackay",
+                "2015MACK06"
+            ],
+            [
+                "Carter Kucala",
+                "2015KUCA01"
+            ],
+            [
+                "Mihir Narayan",
+                "2018NARA14"
+            ]
+        ]
+    },
+    {
+        "schoolName": "University of Southern California",
+        "clubName": "CubeSC",
+        "members": [
+            [
+                "Jack Waterman",
+                "2023WATE03"
+            ],
+            [
+                "Richard Peng",
+                "2019PENG02"
+            ],
+            [
+                "Liv Coverdale",
+                "2022COVE02"
+            ]
+        ]
+    },
+    {
+        "schoolName": "UC Berkeley",
+        "clubName": "Rubik's Cube Club at Berkeley",
+        "members": [
+            [
+                "Heidi Chan",
+                "2018CHAN50"
+            ],
+            [
+                "Calix Tang",
+                "2015TANG04"
+            ],
+            [
+                "Ethan Jan",
+                "2014JANE02"
+            ]
+        ]
+    },
+    {
+        "schoolName": "Georgia Tech",
+        "clubName": "GT Cubing",
+        "members": [
+            [
+                "Justin Barker",
+                "2013BARK01"
+            ],
+            [
+                "Vishwa Sankar",
+                "2017SANK04"
+            ],
+            [
+                "Shahir Latif",
+                "2023LATI02"
+            ]
+        ]
+    },
+    {
+        "schoolName": "Vanderbilt University",
+        "clubName": "Vanderbilt Cube Club",
+        "members": [
+            [
+                "Thomas Pham",
+                "2023PHAM02"
+            ],
+            [
+                "Marcus Kamen",
+                "2015KAME02"
+            ],
+            [
+                "Jonathan Tilahun",
+                "2014TILA01"
+            ]
+        ]
+    }
+]

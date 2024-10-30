@@ -15,6 +15,8 @@ body {
   .nav-logo {
     font-size: 1.5rem;
     font-weight: bold;
+    text-decoration: none;
+    color: white;
   }
   
   .nav-links {

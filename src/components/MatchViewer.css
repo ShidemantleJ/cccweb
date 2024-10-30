@@ -4,6 +4,11 @@ h1 {
     color: #333333;
 }
 
+.team-links {
+    color: #333333;
+    text-decoration: none;
+}
+
 h2 {
     text-align: center;
     margin-bottom: 10px;
@@ -38,6 +43,13 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
+.match-table a{
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
 
 .match-table tr:hover {
     cursor: pointer;

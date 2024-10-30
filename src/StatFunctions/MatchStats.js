@@ -1,45 +1,20 @@
 function getSetsWon(teamName, match) {
-  let setsWon = 0;
   let team1solves;
   let team2solves;
-  if (match.team1.teamName === teamName) {
+  let team1sets = 0;
+  let team2sets = 0;
+
     for (let i = 0; i < 3; i++) {
       team1solves = 0;
       team2solves = 0;
       for (let j = 0; j < 7; j++) {
-        if (match.team1.times[i][j] === undefined || match.team2.times[i][j] === undefined) {
-          break;
-        }
-        if (match.team1.times[i][j] < match.team2.times[i][j]) {
-          team1solves++;
-        } else if (match.team1.times[i][j] > match.team2.times[i][j]) {
-          team2solves++;
-        }
+        let team1Won = (match.team1.times[i][j] < match.team2.times[i][j]) && match.team1.times[i][j] !== -1 ? 1 : 0;
+
+        team1Won ? team1solves++ : team2solves++;
       }
-      if (team1solves > team2solves) {
-        setsWon++;
-      }
+      team1solves > team2solves ? team1sets++ : team2sets++;
     }
-  } else if (match.team2.teamName === teamName) {
-    for (let i = 0; i < 3; i++) {
-      team1solves = 0;
-      team2solves = 0;
-      for (let j = 0; j < 7; j++) {
-        if (match.team1.times[i][j] === undefined || match.team2.times[i][j] === undefined) {
-          break;
-        }
-        if (match.team2.times[i][j] < match.team1.times[i][j]) {
-          team2solves++;
-        } else if (match.team1.times[i][j] > match.team2.times[i][j]) {
-          team1solves++;
-        }
-      }
-      if (team1solves < team2solves) {
-        setsWon++;
-      }
-    }
-  }
-  return setsWon;
+    return teamName === match.team1.teamName ? team1sets : team2sets;
 }
 
 function didWin (teamName, match) {

@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="nav-logo">Collegiate Cubing Championship</div>
+      <Link to="/" className="nav-logo">Collegiate Cubing Championship</Link>
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <Link to="/">Home</Link>
         <Link to="/brackets">Brackets</Link>
@@ -28,5 +28,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;

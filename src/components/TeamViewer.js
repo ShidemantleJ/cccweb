@@ -2,7 +2,7 @@ import React from 'react';
 import data from '../data/match-data.json';
 import getMeanSolve from "../StatFunctions/IndividualStats";
 import './TeamViewer.css';
-import { getSetsWon, didWin } from '../StatFunctions/MatchStats';
+import { didWin } from '../StatFunctions/MatchStats';
 
 function TeamViewer(props) {
 
@@ -26,8 +26,8 @@ function TeamViewer(props) {
                     <th>Mean Solve Time:</th>
                 </thead>
                 <tbody>
-            {isTeam1 && matches[0].team1.names.map(name => <><tr key={name}><td>{name}</td><td>{getMeanSolve(name).toFixed(2)}</td></tr></>)} 
-            {!isTeam1 && matches[0].team2.names.map(name => <><tr key={name}><td>{name}</td><td>{getMeanSolve(name).toFixed(2)}</td></tr></>)}
+            {isTeam1 && matches[0].team1.names.map(name => <><tr key={name} onClick={() => window.location.href = `/competitorstatistics/${name}`}><td>{name}</td><td>{getMeanSolve(name).toFixed(2)}</td></tr></>)} 
+            {!isTeam1 && matches[0].team2.names.map(name => <><tr key={name} onClick={() => window.location.href = `/competitorstatistics/${name}`}><td>{name}</td><td>{getMeanSolve(name).toFixed(2)}</td></tr></>)}
                 </tbody>
             </table>
             <h2>Matches: </h2>

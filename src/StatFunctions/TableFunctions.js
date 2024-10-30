@@ -1,70 +1,75 @@
+import React from 'react';
+
 function tableHeader(match, i) {
     return (
       <>
       <tr>
-        <th>{match.team1.names.at(i)}</th>
-        <th>{match.team2.names.at(i)}</th>
+        <th><a href={`/competitorstatistics/${match.team1.names.at(i)}`}>{match.team1.names.at(i)}</a></th>
+        <th><a href={`/competitorstatistics/${match.team2.names.at(i)}`}>{match.team2.names.at(i)}</a></th>
         <th>Scramble</th>
       </tr>
       </>
     )
-  }
-  
+  }  
   function matchupData(match, i, setSelectedScramble, selectedScramble) {
     const elements = [];
     for (let j = 0; j < 7; j++) {
       if (match.team1.times[i][j] === undefined || match.team2.times[i][j] === undefined) {
         break;
       }
-      let t1min = match.team1.times[i].indexOf(Math.min(...match.team1.times[i]));
-      let t1max = match.team1.times[i].indexOf(Math.max(...match.team1.times[i]));
       let t1currTime = match.team1.times[i][j];
-      let t2min = match.team2.times[i].indexOf(Math.min(...match.team2.times[i]));
-      let t2max = match.team2.times[i].indexOf(Math.max(...match.team2.times[i]));
       let t2currTime = match.team2.times[i][j];
   
-      let team1Won = match.team1.times[i][j] < match.team2.times[i][j] ? 1 : 0;
+      let team1Won = (match.team1.times[i][j] < match.team2.times[i][j]) && match.team1.times[i][j] !== -1 ? 1 : 0;
       elements.push(
-        <>
+        <React.Fragment key={`match-${i}-${j}`}>
           <tr className="match-row" onClick={() => setSelectedScramble(selectedScramble === match.scrambles[i][j] ? 0 : match.scrambles[i][j])}>
-            <td className={team1Won ? 'won' : 'lost'}>{j === t1max || j === t1min ? "(" + t1currTime + ")" : t1currTime}</td>
-            <td className={team1Won ? 'lost' : 'won'}>{j === t2max || j === t2min ? "(" + t2currTime + ")" : t2currTime}</td>
+            <td className={team1Won ? 'won' : 'lost'}>{t1currTime === -1 ? "DNF" : t1currTime.toFixed(2)}</td>
+            <td className={team1Won ? 'lost' : 'won'}>{t2currTime === -1 ? "DNF" : t2currTime.toFixed(2)}</td>
             <td>{match.scrambles[i][j]}</td>
           </tr>
-          {selectedScramble === match.scrambles[i][j] && selectedScramble !== undefined && (
-            <tr>
+          {selectedScramble === match.scrambles[i][j] && (selectedScramble !== undefined || selectedScramble !== "") && (
+            <tr key={`scramble-${i}-${j}`}>
               <td colSpan="3"><scramble-display scramble={match.scrambles[i][j]}></scramble-display></td>
             </tr>
           )}
-        </>
-      )
-    }
-    return elements;
-  }
-  function retTable(match, setSelectedScramble, selectedScramble) {
-    const elements = [];
-  
-    for (let i = 0; i < 3; i++) {
-      elements.push(
-        <table className="match-table">
-          <thead>
-          {tableHeader(match, i)}
-          </thead>
-          <tbody>
-          {matchupData(match, i, setSelectedScramble, selectedScramble)}
-          </tbody>
-        </table>
+        </React.Fragment>
       )
     }
     return elements;
   }
 
-function returnMatchupTable(match, setSelectedScramble, selectedScramble, competitorName) {
+function FullMatchTable(props) {
+  const match = props.match;
+  const selectedScramble = props.selectedScramble;
+  const setSelectedScramble = props.setSelectedScramble;
+
+  const elements = [];
+  
+  for (let i = 0; i < 3; i++) {
+    elements.push(
+      <table key={`table-${i}`} className="match-table">
+        <thead>
+        {tableHeader(match, i)}
+        </thead>
+        <tbody>
+        {matchupData(match, i, setSelectedScramble, selectedScramble)}
+        </tbody>
+      </table>
+    )
+  }
+  return elements;
+}
+
+function MatchupTable(props) {
+  const competitorName = props.competitorName;
+  const match = props.match;
+  const selectedScramble = props.selectedScramble;
+  const setSelectedScramble = props.setSelectedScramble;
 
   const elements = [];
   const team1index = match.team1.names.indexOf(competitorName);
   const team2index = match.team2.names.indexOf(competitorName);
-  console.log(team1index);
   let index = null;
 
   if (team1index !== -1) index = team1index;
@@ -72,7 +77,7 @@ function returnMatchupTable(match, setSelectedScramble, selectedScramble, compet
   else return null;
 
   elements.push(
-    <table className="match-table">
+    <table key="matchup-table" className="match-table">
       <thead>
       {tableHeader(match, index)}
       </thead>
@@ -85,5 +90,4 @@ function returnMatchupTable(match, setSelectedScramble, selectedScramble, compet
   return elements;
 }
 
-// export all functions
-export {retTable, tableHeader, matchupData, returnMatchupTable};
+export {tableHeader, matchupData, MatchupTable, FullMatchTable};

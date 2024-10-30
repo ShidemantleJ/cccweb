@@ -31,6 +31,22 @@
           "names": ["Calix Tang", "Ethan Jan", "Heidi Chan"],
           "times": [[10.62, 15.57, 13.93, 10.24, 10.24], [8.2, 7.56, 6.55, 7.83], [7.13, 6.31, 6.24, 8.53, 8.88, 7.49]]
         }
+      },
+      {
+        "matchId": "100",
+        "matchDateTime": "2024-10-01T20:00:00",
+        "watchLink": "",
+        "scrambles": [["", "", ""],["", "", ""],["", "", ""]],
+        "team1": {
+          "teamName": "University of Texas at Austin",
+          "names": ["Jeremy Sheng", "Azhar Virani", "Tristan Patrick"],
+          "times": [[10.088,8.502,7.328,8.13,12.13,7.806], [9.79,12.191,9.86,8.04], [9.77,16.49,10.35,-1,13.78,9.4,8.84]]
+        },
+        "team2": {
+          "teamName": "University of Houston",
+          "names": ["Derek Herrera", "Thomas Tran", "Jacob Nguyen"],
+          "times": [[8.302,8.957,7.972,6.069,9.4,7.723], [7.4,7.85,6.27,6.62], [14.937,14.65,16.39,13.125,11.74,11.72,14.19]]
+        }
       }
     ]
   }

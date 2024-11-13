@@ -1,16 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Brackets from './pages/Brackets';
-import Matches from './pages/Matches';
-import TeamStatistics from './pages/TeamStatistics'
-import Statistics from './pages/Statistics';
-import CompetitorStatistics from './pages/CompetitorStatistics';
+import Home from './pages/static/Home';
+import About from './pages/static/About';
+import Contact from './pages/static/Contact';
+import Brackets from './pages/static/Brackets';
+import Matches from './pages/static/Matches';
+import TeamStatistics from './pages/static/TeamStatistics'
+import Statistics from './pages/static/Statistics';
+import CompetitorStatistics from './pages/static/CompetitorStatistics';
+import Judge1 from './pages/currentmatch/Judge1';
+import Operator from './pages/currentmatch/Operator';
+import Login from './pages/static/Login';
 
 function App() {
+
   return (
     <Router>
       <Navbar />
@@ -25,6 +29,9 @@ function App() {
         <Route path="/teamstatistics" element={<Statistics />} />
         <Route path="/competitorstatistics" element={<Statistics />} />
         <Route path="/competitorstatistics/:competitorName" element={<CompetitorStatistics />} />
+        <Route path="/judge1" element={<Judge1 />} />
+        <Route path="/operator" element={<Operator />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import CompetitorViewer from '../components/CompetitorViewer';
+import CompetitorViewer from '../../components/CompetitorViewer';
 import {useParams, useNavigate} from 'react-router-dom';
 
 const CompetitorStatistics = () => {

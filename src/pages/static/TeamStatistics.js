@@ -1,6 +1,6 @@
 import React from 'react';
-import data from '../data/match-data.json';
-import TeamViewer from '../components/TeamViewer';
+import data from '../../data/match-data.json';
+import TeamViewer from '../../components/TeamViewer';
 import {useParams, useNavigate} from 'react-router-dom';
 
 const TeamStatistics = () => {

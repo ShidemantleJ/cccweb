@@ -1,7 +1,7 @@
 import React from 'react';
-import TeamSearch from '../components/TeamSearch';
-import data from '../data/match-data.json'
-import CompetitorSearch from '../components/CompetitorSearch';
+import TeamSearch from '../../components/TeamSearch';
+import data from '../../data/match-data.json'
+import CompetitorSearch from '../../components/CompetitorSearch';
 
 const Statistics = () => {
     const competitorNames = new Map();

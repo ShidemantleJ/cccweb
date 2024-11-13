@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import MatchViewer from '../components/MatchViewer';
+import MatchViewer from '../../components/MatchViewer';
 
 const Matches = () => {
   let params = useParams();

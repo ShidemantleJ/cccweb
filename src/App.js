@@ -9,9 +9,10 @@ import Matches from './pages/static/Matches';
 import TeamStatistics from './pages/static/TeamStatistics'
 import Statistics from './pages/static/Statistics';
 import CompetitorStatistics from './pages/static/CompetitorStatistics';
-import Judge1 from './pages/currentmatch/Judge1';
+import Judge from './pages/currentmatch/Judge';
 import Operator from './pages/currentmatch/Operator';
 import Login from './pages/static/Login';
+import Team from './pages/currentmatch/Team';
 
 function App() {
 
@@ -29,9 +30,11 @@ function App() {
         <Route path="/teamstatistics" element={<Statistics />} />
         <Route path="/competitorstatistics" element={<Statistics />} />
         <Route path="/competitorstatistics/:competitorName" element={<CompetitorStatistics />} />
-        <Route path="/judge1" element={<Judge1 />} />
+        <Route path="/judge/:team" element={<Judge />} />
+        <Route path="/judge" element={<Judge />} />
         <Route path="/operator" element={<Operator />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/team/:teamNum" element={<Team />} />
       </Routes>
     </Router>
   );

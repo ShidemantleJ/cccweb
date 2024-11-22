@@ -1,6 +1,6 @@
 // Navbar.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -9,6 +9,9 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const pathname = useLocation().pathname.toLowerCase();
+  if (pathname.includes("/team") || pathname.includes("/judge")) return null;
 
   return (
     <nav className="navbar">

@@ -7,7 +7,7 @@ import {FullMatchTable} from '../StatFunctions/TableFunctions';
 import errImg from '../images/error.jpg';
 
 export default function MatchViewer (props) {
-  const match = data.matches.find(match => match.matchId === props.matchId);
+  let match = data.matches.find(match => match.matchId === props.matchId);
   const [selectedScramble, setSelectedScramble] = useState(null);
 
   if (!match) {

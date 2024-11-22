@@ -8,7 +8,7 @@ Page should have forms for watch link, team 1 name, team 2 name, match ID, and i
 
 import { useState, useEffect } from 'react';
 import { database, auth } from '../../firebase';
-import {ref, get, update} from 'firebase/database';
+import {ref, get, update, remove} from 'firebase/database';
 import { onAuthStateChanged } from 'firebase/auth';
 
 function useAdminCheck() {
@@ -103,6 +103,34 @@ const Operator = () => {
         });
     }
 
+    const handleClearAll = () => {
+        if (window.confirm('Are you sure you want to clear all match data? This action cannot be undone.') && window.confirm("Are you sure you're sure?") && window.confirm("Are you sure you're sure you're sure???")) {
+            const matchRef = ref(database, 'currentMatch');
+            remove(matchRef);
+            setTeam1Name('');
+            setTeam2Name('');
+            setTeam1Members(['','','']);
+            setTeam2Members(['','','']);
+        }
+    }
+
+    const handleDownloadMatch = async () => {
+        const matchRef = ref(database, 'currentMatch');
+        const snapshot = await get(matchRef);
+        const matchData = snapshot.val();
+        
+        const dataStr = JSON.stringify(matchData, null, 2);
+        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+        const url = window.URL.createObjectURL(dataBlob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'currentMatch.json';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+    }
+
     return (
     <div>
         <table>
@@ -147,8 +175,9 @@ const Operator = () => {
                 ))}
             </tbody>
         </table>
+        <button onClick={handleClearAll}>Clear All Data</button>
+        <button onClick={handleDownloadMatch}>Download Match Data</button>
     </div>
     )
 }
-
 export default Operator;

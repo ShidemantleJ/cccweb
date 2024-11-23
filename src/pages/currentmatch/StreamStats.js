@@ -47,9 +47,9 @@ function StreamStats () {
   const { team1, team2 } = matchData;
   switch (element) {
     case "team1name":
-      return <h1 style={{marginTop: '3px'}}>{team1.teamName}</h1>
+      return <h1 style={{marginTop: '3px'}}>{team1?.teamName !== undefined && team1.teamName}</h1>
     case "team2name":
-      return <h1 style={{marginTop: '3px'}}>{team2.teamName}</h1>
+      return <h1 style={{marginTop: '3px'}}>{team2?.teamName !== undefined && team2.teamName}</h1>
     case "team1times":
       return (
         <div style={{backgroundColor: "#bdbdbd", width: "100vw", height: "100vh"}}>
@@ -71,10 +71,9 @@ function StreamStats () {
         </div>
       )
     case "team1playername":
-      console.log();
-      return <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>{team1?.names.at(team1?.currentIndex)}</h1>
+      return <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>{team1?.names !== undefined && team1?.names.at(team1?.currentIndex)}</h1>
     case "team2playername":
-      return <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>{team2?.names.at(team2?.currentIndex)}</h1>
+      return <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>{team2?.names !== undefined && team2?.names.at(team2?.currentIndex)}</h1>
     case "team1recenttime":
       return (
         <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>

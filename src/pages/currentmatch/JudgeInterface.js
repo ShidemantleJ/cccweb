@@ -28,12 +28,6 @@ export function JudgeInterface (props) {
 
     useEffect(() => {
         const loadData = async () => {
-            // Load current index and scramble index
-            const currentIndexSnapshot = await get(currentIndexRef);
-            const scrambleIndexSnapshot = await get(scrambleIndexRef);
-            if (currentIndexSnapshot.exists()) setCurrentIndex(currentIndexSnapshot.val());
-            if (scrambleIndexSnapshot.exists()) setScrambleIndex(scrambleIndexSnapshot.val());
-
             // Load status
             const statusSnapshot = await get(statusRef);
             if (statusSnapshot.exists()) {

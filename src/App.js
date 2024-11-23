@@ -13,6 +13,7 @@ import Judge from './pages/currentmatch/Judge';
 import Operator from './pages/currentmatch/Operator';
 import Login from './pages/static/Login';
 import Team from './pages/currentmatch/Team';
+import StreamStats from './pages/currentmatch/StreamStats';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/operator" element={<Operator />} />
         <Route path="/login" element={<Login />} />
         <Route path="/team/:teamNum" element={<Team />} />
+        <Route path="/streamstats/:element" element={<StreamStats />} />
       </Routes>
     </Router>
   );

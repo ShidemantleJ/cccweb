@@ -7,7 +7,7 @@ This page should display the current scramble (in notation,) the draw scramble, 
 import React, { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
 import { database } from '../../firebase';
-import {ref, get, update, set} from 'firebase/database';
+import {ref, get, update, set, onValue} from 'firebase/database';
 import {randomScrambleForEvent} from 'cubing/scramble';
 import { ScrambleDisplay } from 'scramble-display';
 
@@ -27,37 +27,86 @@ export function JudgeInterface (props) {
     const currentIndexRef = ref(database, `currentMatch/team${teamNum}/currentIndex`);
 
     useEffect(() => {
-        set(scrambleIndexRef, scrambleIndex);
-        set(currentIndexRef, currentIndex);
-        const loadNames = async () => {
+        const loadData = async () => {
+            // Load current index and scramble index
+            const currentIndexSnapshot = await get(currentIndexRef);
+            const scrambleIndexSnapshot = await get(scrambleIndexRef);
+            if (currentIndexSnapshot.exists()) setCurrentIndex(currentIndexSnapshot.val());
+            if (scrambleIndexSnapshot.exists()) setScrambleIndex(scrambleIndexSnapshot.val());
+
+            // Load status
+            const statusSnapshot = await get(statusRef);
+            if (statusSnapshot.exists()) {
+                setScrambleChecked(statusSnapshot.val().scrambleChecked || false);
+                setCompetitorMayStart(statusSnapshot.val().competitorMayStart || false);
+            }
+
+            // Load times
+            const timesSnapshot = await get(arrayRef);
+            if (timesSnapshot.exists()) {
+                const timesData = timesSnapshot.val();
+                const newTimes = Array(7).fill('');
+                Object.entries(timesData).forEach(([key, value]) => {
+                    newTimes[parseInt(key)] = value.toString();
+                });
+                setTimes(newTimes);
+            }
+
+            // Load names and scramble
             const nameRef = ref(database, `currentMatch/team1/names/${currentIndex}`);
             const opponentNameRef = ref(database, `currentMatch/team2/names/${currentIndex}`);
             const scrambleRef = ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`);
 
-            try {
-                const snapshot = await get(nameRef);
-                const opponentSnapshot = await get(opponentNameRef);
-                const scrambleSnapshot = await get(scrambleRef);
-                if (snapshot.exists()) {
-                    setCurrentName(snapshot.val());
-                }
-                if (opponentSnapshot.exists()) {
-                    setCurrentOpponentName(opponentSnapshot.val());
-                }
-                if (scrambleSnapshot.exists() && scrambleSnapshot.val() !== '') {
-                    setScramble(scrambleSnapshot.val().toString());
-                } else {
-                    const newScramble = await randomScrambleForEvent("333");
-                    await set(scrambleRef, newScramble.toString());
-                    
-                    setScramble(newScramble.toString());
-                }
-            } catch (error) {
-                console.error('Error loading names:', error);
-            }
-        };        loadNames();
-    }, [currentIndex, scrambleIndex]);
+            const [nameSnapshot, opponentSnapshot, scrambleSnapshot] = await Promise.all([
+                get(nameRef),
+                get(opponentNameRef),
+                get(scrambleRef)
+            ]);
 
+            if (nameSnapshot.exists()) setCurrentName(nameSnapshot.val());
+            if (opponentSnapshot.exists()) setCurrentOpponentName(opponentSnapshot.val());
+            if (scrambleSnapshot.exists() && scrambleSnapshot.val() !== '') {
+                setScramble(scrambleSnapshot.val().toString());
+            } else {
+                const newScramble = await randomScrambleForEvent("333");
+                await set(scrambleRef, newScramble.toString());
+                setScramble(newScramble.toString());
+            }
+        };
+
+        // Set up real-time listeners
+        const unsubscribeStatus = onValue(statusRef, (snapshot) => {
+            if (snapshot.exists()) {
+                setScrambleChecked(snapshot.val().scrambleChecked || false);
+                setCompetitorMayStart(snapshot.val().competitorMayStart || false);
+            }
+        });
+
+        const unsubscribeTimes = onValue(arrayRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const timesData = snapshot.val();
+                const newTimes = Array(7).fill('');
+                Object.entries(timesData).forEach(([key, value]) => {
+                    newTimes[parseInt(key)] = value.toString();
+                });
+                setTimes(newTimes);
+            }
+        });
+
+        const unsubscribeScramble = onValue(ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`), (snapshot) => {
+            if (snapshot.exists() && snapshot.val() !== '') {
+                setScramble(snapshot.val().toString());
+            }
+        });
+
+        loadData();
+
+        return () => {
+            unsubscribeStatus();
+            unsubscribeTimes();
+            unsubscribeScramble();
+        };
+    }, [currentIndex, scrambleIndex]);
     const handleTimeChange = async (index, value) => {
         const newTimes = [...times];
         newTimes[index] = value;
@@ -77,7 +126,7 @@ export function JudgeInterface (props) {
             console.error('Error saving data:', error);
         }
 
-        setScrambleIndex(index+1);
+        scrambleIndex < 6 && setScrambleIndex(index+1);
     };
 
     const handleStatusChange = async (field, value) => {
@@ -135,6 +184,13 @@ export function JudgeInterface (props) {
         }
     };
 
+    const generateNewScramble = async () => {
+        const scrambleRef = ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`);
+        const newScramble = await randomScrambleForEvent("333");
+        await set(scrambleRef, newScramble.toString());
+        setScramble(newScramble.toString());
+    };
+
     return (
     <>
     <h1>Team {teamNum} Judge</h1>
@@ -147,9 +203,10 @@ export function JudgeInterface (props) {
     <h3>Current Scramble, #{scrambleIndex + 1}: {scramble}</h3>
     <button onClick={async () => {
         const newIndex = scrambleIndex + 1;
-        setScrambleIndex(newIndex);
+        scrambleIndex < 6 && setScrambleIndex(newIndex);
         await set(scrambleIndexRef, newIndex);
     }}>Next Scramble</button>
+    <button onClick={generateNewScramble}>Generate New Scramble</button>
     <scramble-display scramble={scramble} />
     <div>
         <label>

@@ -59,9 +59,8 @@ export default function Team() {
         onValue(currentIndexRef, (snapshot) => {
             const data = snapshot.val();
             if (data !== null) {
-                console.log("changing matchup index");
                 setCurrentIndex(data);
-                onValue(ref(database, `currentMatch/scrambles/${data}/${scrambleIndex}`), (snapshot) => {
+                onValue(ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`), (snapshot) => {
                     const scrambleData = snapshot.val();
                     if (scrambleData !== null) {
                         setScramble(scrambleData);
@@ -74,7 +73,7 @@ export default function Team() {
             const data = snapshot.val();
             if (data !== null) {
                 setScrambleIndex(data);
-                onValue(ref(database, `currentMatch/scrambles/${currentIndex}/${data}`), (snapshot) => {
+                onValue(ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`), (snapshot) => {
                     const scrambleData = snapshot.val();
                     if (scrambleData !== null) {
                         setScramble(scrambleData);

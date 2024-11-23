@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { database } from "../../firebase";
-import { ref, onValue } from "firebase/database";
+import { ref, onValue, get } from "firebase/database";
 import { useParams } from "react-router-dom";
 import './styles.css';
 
@@ -14,6 +14,17 @@ function StreamStats () {
   useEffect(() => {
     const matchRef = ref(database, "currentMatch");
     
+    // Initial fetch
+    get(matchRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        setMatchData(snapshot.val());
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error("Error fetching initial data: ", error);
+    });
+
     const onDataChange = (snapshot) => {
       if (snapshot.exists()) {
         setMatchData(snapshot.val());
@@ -60,9 +71,10 @@ function StreamStats () {
         </div>
       )
     case "team1playername":
-      return <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>{team1.names[team1.currentIndex]}</h1>
+      console.log();
+      return <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>{team1?.names.at(team1?.currentIndex)}</h1>
     case "team2playername":
-      return <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>{team2.names[team2.currentIndex]}</h1>
+      return <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>{team2?.names.at(team2?.currentIndex)}</h1>
     case "team1recenttime":
       return (
         <h1 style={{position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', marginBottom: '25px'}}>

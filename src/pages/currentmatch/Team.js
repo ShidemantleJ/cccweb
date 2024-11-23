@@ -33,21 +33,29 @@ export default function Team() {
         const scrambleIndexRef = ref(database, `currentMatch/team${teamNum}/scrambleIndex`);
         const currentNameRef = ref(database, `currentMatch/team${teamNum}/names/${currentIndex}`);
         const currentOpponentNameRef = ref(database, `currentMatch/team${oppTeamNum}/names/${currentIndex}`);
-
+        const scrambleRef = ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`);
+    
+        const unsubscribeScramble = onValue(scrambleRef, (snapshot) => {
+            const scrambleData = snapshot.val();
+            if (scrambleData !== null) {
+                setScramble(scrambleData);
+            }
+        });
+    
         onValue(currentOpponentNameRef, (snapshot) => {
             const data = snapshot.val();
             if (data) {
                 setCurrentOpponentName(data);
             }
         });
-
+    
         onValue(currentNameRef, (snapshot) => {
             const data = snapshot.val();
             if (data) {
                 setCurrentName(data);
             }
         });
-
+    
         onValue(teamStatus, (snapshot) => {
             const data = snapshot.val();
             if (data) {
@@ -55,33 +63,25 @@ export default function Team() {
                 setCompetitorMayStart(data.competitorMayStart || false);
             }
         });
-
+    
         onValue(currentIndexRef, (snapshot) => {
             const data = snapshot.val();
             if (data !== null) {
                 setCurrentIndex(data);
-                onValue(ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`), (snapshot) => {
-                    const scrambleData = snapshot.val();
-                    if (scrambleData !== null) {
-                        setScramble(scrambleData);
-                    }
-                });
             }
         });
-
+    
         onValue(scrambleIndexRef, (snapshot) => {
             const data = snapshot.val();
             if (data !== null) {
                 setScrambleIndex(data);
-                onValue(ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`), (snapshot) => {
-                    const scrambleData = snapshot.val();
-                    if (scrambleData !== null) {
-                        setScramble(scrambleData);
-                    }
-                });
             }
         });
-    }, [currentIndex, scrambleIndex]);
+    
+        return () => {
+            unsubscribeScramble();
+        };
+    }, [teamNum, oppTeamNum, currentIndex, scrambleIndex]);
 
     return (
         <>
@@ -94,9 +94,9 @@ export default function Team() {
             </div>
         </div>
         <div style={{width: '50%', margin: '0 auto', textAlign: 'center'}}>
-            {!scrambleChecked && !competitorMayStart && <div style={{backgroundColor: 'red', width: '50%', margin: '0 auto'}}>Do not start</div>}
-            {scrambleChecked && !competitorMayStart && <div style={{backgroundColor: 'yellow', width: '50%', margin: '0 auto'}}>Do not start, but your scramble has been checked</div>}
-            {competitorMayStart && <div style={{backgroundColor: 'green', width: '50%', margin: '0 auto'}}>Start whenever you're ready</div>}
+            {!scrambleChecked && !competitorMayStart && <div style={{backgroundColor: '#ff5959', width: '50%', margin: '0 auto', textAlign: 'center', padding: '30px', fontSize: '24px', color: 'white', borderRadius: '20px'}}>Do not start</div>}
+            {scrambleChecked && !competitorMayStart && <div style={{backgroundColor: 'yellow', width: '50%', margin: '0 auto', textAlign: 'center', padding: '30px', fontSize: '24px', borderRadius: '20px'}}>Do not start, but your scramble has been checked</div>}
+            {competitorMayStart && <div style={{backgroundColor: 'green', width: '50%', margin: '0 auto', textAlign: 'center', padding: '30px', fontSize: '24px', borderRadius: '20px'}}>Start whenever you're ready</div>}
         </div>
         </>
     );

@@ -3,7 +3,7 @@ import {Navigate, useParams} from 'react-router-dom';
 import {JudgeInterface} from './JudgeInterface';
 import { useState, useEffect } from 'react';
 import { database, auth } from '../../firebase';
-import {ref, get} from 'firebase/database';
+import {ref, onValue, get} from 'firebase/database';
 import { onAuthStateChanged } from 'firebase/auth';
 
 function useAdminCheck() {
@@ -31,7 +31,20 @@ function useAdminCheck() {
 export default function Judge () {
     const {isAdmin, loading} = useAdminCheck();
     let params = useParams();
+    const [showSecond, setShowSecond] = useState(false);
     
+    useEffect(() => {
+        const scrambleref = ref(database, `currentMatch/scrambles/`);
+        const unsubscribe = onValue(scrambleref, (snapshot) => {
+            if (snapshot.exists()) {
+                setShowSecond(true);
+            }
+        });
+
+        // Clean up subscription
+        return () => unsubscribe();
+    }, []);
+
     if (loading) return <h1>loading...</h1>;
     if (isAdmin) { 
         if (!params.team) {
@@ -42,7 +55,7 @@ export default function Judge () {
                     </div>
                     <div style={{width: '2px', backgroundColor: 'black'}}></div>
                     <div style={{flex: 1}}>
-                        <JudgeInterface teamNum={2} />
+                        {showSecond && <JudgeInterface teamNum={2} />}
                     </div>
                 </div>
             );

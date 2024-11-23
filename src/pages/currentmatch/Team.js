@@ -1,23 +1,11 @@
-/*
-
-This page should display the current scramble (notation only,) the match table, and the state of the judge's confirmation for team 1
-
-*/
-
 import {useState, useEffect} from 'react';
 import {ref, onValue} from 'firebase/database';
 import {useParams} from 'react-router-dom';
 import {database} from '../../firebase';
 
 export default function Team() {
-    let params = useParams();
-    const teamNum = params.teamNum;
-
-    let oppTeamNum;
-    if (teamNum === '1') {
-        oppTeamNum = '2';
-    } else oppTeamNum = '1';
-    console.log(teamNum, oppTeamNum);
+    const {teamNum} = useParams();
+    const oppTeamNum = teamNum === '1' ? '2' : '1';
     
     const [scrambleChecked, setScrambleChecked] = useState(false);
     const [competitorMayStart, setCompetitorMayStart] = useState(false);
@@ -28,76 +16,81 @@ export default function Team() {
     const [scramble, setScramble] = useState('');
 
     useEffect(() => {
-        const teamStatus = ref(database, `currentMatch/team${teamNum}/status`);
-        const currentIndexRef = ref(database, `currentMatch/team${teamNum}/currentIndex`);
-        const scrambleIndexRef = ref(database, `currentMatch/team${teamNum}/scrambleIndex`);
-        const currentNameRef = ref(database, `currentMatch/team${teamNum}/names/${currentIndex}`);
-        const currentOpponentNameRef = ref(database, `currentMatch/team${oppTeamNum}/names/${currentIndex}`);
-        const scrambleRef = ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`);
-    
-        const unsubscribeScramble = onValue(scrambleRef, (snapshot) => {
-            const scrambleData = snapshot.val();
-            if (scrambleData !== null) {
-                setScramble(scrambleData);
-            }
-        });
-    
-        onValue(currentOpponentNameRef, (snapshot) => {
-            const data = snapshot.val();
-            if (data) {
-                setCurrentOpponentName(data);
-            }
-        });
-    
-        onValue(currentNameRef, (snapshot) => {
-            const data = snapshot.val();
-            if (data) {
-                setCurrentName(data);
-            }
-        });
-    
-        onValue(teamStatus, (snapshot) => {
-            const data = snapshot.val();
-            if (data) {
-                setScrambleChecked(data.scrambleChecked || false);
-                setCompetitorMayStart(data.competitorMayStart || false);
-            }
-        });
-    
-        onValue(currentIndexRef, (snapshot) => {
-            const data = snapshot.val();
-            if (data !== null) {
-                setCurrentIndex(data);
-            }
-        });
-    
-        onValue(scrambleIndexRef, (snapshot) => {
-            const data = snapshot.val();
-            if (data !== null) {
-                setScrambleIndex(data);
-            }
-        });
-    
-        return () => {
-            unsubscribeScramble();
+        const refs = {
+            teamStatus: ref(database, `currentMatch/team${teamNum}/status`),
+            currentIndex: ref(database, `currentMatch/team${teamNum}/currentIndex`),
+            scrambleIndex: ref(database, `currentMatch/team${teamNum}/scrambleIndex`),
+            currentName: ref(database, `currentMatch/team${teamNum}/names/${currentIndex}`),
+            currentOpponentName: ref(database, `currentMatch/team${oppTeamNum}/names/${currentIndex}`),
+            scramble: ref(database, `currentMatch/scrambles/${currentIndex}/${scrambleIndex}`)
         };
+
+        const unsubscribes = [
+            onValue(refs.scramble, (snapshot) => {
+                const data = snapshot.val();
+                setScramble(data !== null && data !== undefined ? data : '');
+            }),
+
+            onValue(refs.currentOpponentName, (snapshot) => {
+                const data = snapshot.val();
+                setCurrentOpponentName(data !== null && data !== undefined ? data : '');
+            }),
+
+            onValue(refs.currentName, (snapshot) => {
+                const data = snapshot.val();
+                setCurrentName(data !== null && data !== undefined ? data : '');
+            }),
+
+            onValue(refs.teamStatus, (snapshot) => {
+                const data = snapshot.val();
+                if (data) {
+                    setScrambleChecked(data.scrambleChecked || false);
+                    setCompetitorMayStart(data.competitorMayStart || false);
+                }
+            }),
+
+            onValue(refs.currentIndex, (snapshot) => {
+                const data = snapshot.val();
+                setCurrentIndex(data !== null && data !== undefined ? data : 0);
+            }),
+
+            onValue(refs.scrambleIndex, (snapshot) => {
+                const data = snapshot.val();
+                setScrambleIndex(data !== null && data !== undefined ? data : 0);
+            })
+        ];
+
+        return () => unsubscribes.forEach(unsubscribe => unsubscribe());
     }, [teamNum, oppTeamNum, currentIndex, scrambleIndex]);
+
+    const getStatusStyle = (isChecked, mayStart) => ({
+        width: '50%',
+        margin: '0 auto',
+        textAlign: 'center',
+        padding: '30px',
+        fontSize: '24px',
+        borderRadius: '20px',
+        backgroundColor: mayStart ? 'green' : isChecked ? 'yellow' : '#ff5959',
+        color: !isChecked && !mayStart ? 'white' : 'inherit'
+    });
 
     return (
         <>
-        <div>
             <div>
-            <h1>Team {teamNum}</h1>
-            <h2>Current matchup: {currentName} vs {currentOpponentName}</h2>
-            <h1>Scramble for solve #{scrambleIndex+1}:</h1>
-            <h2>{scramble}</h2>
+                <div>
+                    <h1>Team {teamNum}</h1>
+                    <h2>Current matchup: {currentName} vs {currentOpponentName}</h2>
+                    <h1>Scramble for solve #{scrambleIndex + 1}:</h1>
+                    <h2>{scramble}</h2>
+                </div>
             </div>
-        </div>
-        <div style={{width: '50%', margin: '0 auto', textAlign: 'center'}}>
-            {!scrambleChecked && !competitorMayStart && <div style={{backgroundColor: '#ff5959', width: '50%', margin: '0 auto', textAlign: 'center', padding: '30px', fontSize: '24px', color: 'white', borderRadius: '20px'}}>Do not start</div>}
-            {scrambleChecked && !competitorMayStart && <div style={{backgroundColor: 'yellow', width: '50%', margin: '0 auto', textAlign: 'center', padding: '30px', fontSize: '24px', borderRadius: '20px'}}>Do not start, but your scramble has been checked</div>}
-            {competitorMayStart && <div style={{backgroundColor: 'green', width: '50%', margin: '0 auto', textAlign: 'center', padding: '30px', fontSize: '24px', borderRadius: '20px'}}>Start whenever you're ready</div>}
-        </div>
+            <div style={{width: '50%', margin: '0 auto', textAlign: 'center'}}>
+                <div style={getStatusStyle(scrambleChecked, competitorMayStart)}>
+                    {competitorMayStart ? 'Start whenever you\'re ready' :
+                     scrambleChecked ? 'Do not start, but your scramble has been checked' :
+                     'Do not start'}
+                </div>
+            </div>
         </>
     );
 }

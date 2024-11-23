@@ -119,7 +119,7 @@ export function JudgeInterface (props) {
         } catch (error) {
             console.error('Error saving data:', error);
         }
-
+        await set(scrambleIndexRef, index+1);
         scrambleIndex < 6 && setScrambleIndex(index+1);
     };
 

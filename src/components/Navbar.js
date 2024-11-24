@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   const pathname = useLocation().pathname.toLowerCase();
-  if (pathname.includes("/team") || pathname.includes("/judge") || pathname.includes("/streamstats")) return null;
+  if (pathname.includes("/team") && !pathname.includes("/teamstatistics") || pathname.includes("/judge") || pathname.includes("/streamstats")) return null;
 
   return (
     <nav className="navbar">
@@ -30,5 +30,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
+
 };
 export default Navbar;

@@ -107,22 +107,6 @@
         }
       },
       {
-        "matchId": "-1",
-        "matchDateTime": "YYYY-MM-DDTHH:MM:SS",
-        "watchLink": "",
-        "scrambles": [["", "", ""],["", "", ""],["", "", ""]],
-        "team1": {
-          "teamName": "",
-          "names": ["", "", ""],
-          "times": [[], [], []]
-        },
-        "team2": {
-          "teamName": "",
-          "names": ["", "", ""],
-          "times": [[], [], []]
-        }
-      },
-      {
         "matchId": "1",
         "matchDateTime": "2024-10-12T20:00:00",
         "watchLink": "",

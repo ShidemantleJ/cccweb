@@ -24,6 +24,16 @@ function CompetitorSearch({data}) {
       window.location.href = `/competitorstatistics/${suggestion}`;
       setSuggestions([]);
     };
+
+    const handleBlur = () => {
+         setTimeout(() => {
+          setSuggestions([]);
+         }, 100)
+    }
+
+    const handleFocus = () => {
+      setSuggestions(data);
+    }
   
     return (
       <div className="search-container">
@@ -31,6 +41,8 @@ function CompetitorSearch({data}) {
           type="text"
           value={searchTerm}
           onChange={handleInputChange}
+          onBlur={handleBlur}
+          onFocus={handleFocus}
           placeholder="Competitor Search..."
           className="search-input"
         />

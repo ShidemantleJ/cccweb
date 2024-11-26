@@ -10,7 +10,7 @@ function TeamSearch({data}) {
       setSearchTerm(value);
   
       if (value === '') {
-        setSuggestions([]);
+        setSuggestions(data);
       } else {
         const filteredSuggestions = data.filter((item) =>
           item.toLowerCase().includes(value.toLowerCase())
@@ -24,6 +24,16 @@ function TeamSearch({data}) {
       window.location.href = `/teamstatistics/${suggestion}`;
       setSuggestions([]);
     };
+
+    const handleInputFocus = () => {
+      setSuggestions(data);
+    };
+
+    const handleInputBlur = () => {
+      setTimeout(() => {
+        setSuggestions([]);
+      }, 100);
+    };
   
     return (
       <div className="search-container">
@@ -31,9 +41,11 @@ function TeamSearch({data}) {
           type="text"
           value={searchTerm}
           onChange={handleInputChange}
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
           placeholder="Team Search..."
           className="search-input"
-        />
+        /> 
         {suggestions.length > 0 && (
           <ul className="suggestions-list">
             {suggestions.map((suggestion) => (
@@ -49,5 +61,5 @@ function TeamSearch({data}) {
         )}
       </div>
     );
-}
-export default TeamSearch;
+
+}export default TeamSearch;

@@ -3,6 +3,7 @@ import data from '../data/match-data.json';
 import getMeanSolve from "../StatFunctions/IndividualStats";
 import './TeamViewer.css';
 import { didWin } from '../StatFunctions/MatchStats';
+import MatchWidget from './MatchWidget';
 
 function TeamViewer(props) {
 
@@ -34,13 +35,7 @@ function TeamViewer(props) {
             <div className="match-display">
             {matches.length === 0 && <p>No matches found</p>}
             {matches.map(match => (
-                <div className="individual-match" key={match.matchId} onClick={() => window.location.href = `/matches/${match.matchId}`}>
-                    <p>Match Date: {new Date(match.matchDateTime).toLocaleDateString()} at {new Date(match.matchDateTime).toLocaleTimeString()}</p>
-                    <p>Team 1: {match.team1.teamName}</p>
-                    <p>Team 2: {match.team2.teamName}</p>
-                    {match.watchLink !== "" && <p>Watch Link: <a href={match.watchLink}>{match.watchLink}</a></p>}
-                    <p>Result: {didWin(teamName, match) ? "Win" : "Loss"}</p>
-                </div>
+                <MatchWidget match={match} won={didWin(teamName, match)}/>
             ))}
             </div>
         </div>

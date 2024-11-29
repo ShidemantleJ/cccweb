@@ -1,16 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import data from '../../data/bracket_db.json'
 import { useNavigate } from 'react-router-dom';
-import './Home.css'
 
 const Brackets = () => {
-  const [match, setMatch] = useState(null);
-  const [matchClicked, setMatchClicked] = useState(false);
   const navigate = useNavigate();
-
-  function toggleMatchClicked() {
-    setMatchClicked(!matchClicked);
-  }
 
   useEffect(() => {
     window.bracketsViewer.render({
@@ -21,7 +14,6 @@ const Brackets = () => {
     }, {
       onMatchClick: (clickedMatch) => {
         console.log("a match was clicked", String(clickedMatch.id));
-        setMatch(clickedMatch);
         navigate(`/matches/${clickedMatch.id}`);
       }
     }

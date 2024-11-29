@@ -27,7 +27,7 @@ export default function MatchViewer (props) {
 
   return (
     <>
-      <h1>{"[" + setsWonT1 + "] "}<a className="team-links" href={`/teamstatistics/${match.team1.teamName}`}>{match.team1.teamName}</a>{" vs "}<a className="team-links" href={`/teamstatistics/${match.team2.teamName}`}>{match.team2.teamName}</a>{" [" + setsWonT2 + "]"}</h1>
+      <h2>{"[" + setsWonT1 + "] "}<a href={`/teamstatistics/${match.team1.teamName}`}>{match.team1.teamName}</a>{" vs "}<a href={`/teamstatistics/${match.team2.teamName}`}>{match.team2.teamName}</a>{" [" + setsWonT2 + "]"}</h2>
       <h2>{date + " at " + time}</h2>
       {<FullMatchTable match={match} selectedScramble={selectedScramble} setSelectedScramble={setSelectedScramble} />}
     </>

@@ -13,9 +13,9 @@ const Statistics = () => {
 
     return (
         <div>
-            <h1>Search for a Team</h1>
+            <h2>Search for a Team</h2>
             <TeamSearch data={Array.from(teamNames)} />
-            <h1>Search for a Competitor</h1>
+            <h2>Search for a Competitor</h2>
             <CompetitorSearch data={Array.from(uniqueCompetitorNames)} />
         </div>
     );

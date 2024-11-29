@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import {ref, onValue} from 'firebase/database';
 import {useParams} from 'react-router-dom';
 import {database} from '../../firebase';
+import { FullMatchTable } from '../../StatFunctions/TableFunctions';
 
 export default function Team() {
     const {teamNum} = useParams();
@@ -14,9 +15,11 @@ export default function Team() {
     const [currentName, setCurrentName] = useState('');
     const [currentOpponentName, setCurrentOpponentName] = useState('');
     const [scramble, setScramble] = useState('');
+    const [matchData, setMatchData] = useState([]);
 
     useEffect(() => {
         const refs = {
+            matchData: ref(database, `currentMatch`),
             teamStatus: ref(database, `currentMatch/team${teamNum}/status`),
             currentIndex: ref(database, `currentMatch/team${teamNum}/currentIndex`),
             scrambleIndex: ref(database, `currentMatch/team${teamNum}/scrambleIndex`),
@@ -26,6 +29,11 @@ export default function Team() {
         };
 
         const unsubscribes = [
+            onValue(refs.matchData, (snapshot => {
+                const data = snapshot.val();
+                setMatchData(data);
+            })),
+
             onValue(refs.scramble, (snapshot) => {
                 const data = snapshot.val();
                 setScramble(data !== null && data !== undefined ? data : '');
@@ -62,7 +70,6 @@ export default function Team() {
 
         return () => unsubscribes.forEach(unsubscribe => unsubscribe());
     }, [teamNum, oppTeamNum, currentIndex, scrambleIndex]);
-
     const getStatusStyle = (isChecked, mayStart) => ({
         width: '50%',
         margin: '0 auto',
@@ -91,6 +98,7 @@ export default function Team() {
                      'Do not start'}
                 </div>
             </div>
+            {matchData !== undefined && <FullMatchTable match={matchData} />}
         </>
     );
 }

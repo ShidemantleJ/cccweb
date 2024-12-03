@@ -32,7 +32,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/matches/:matchId" element={<Matches />} />
             <Route path="/teamstatistics/:teamName" element={<TeamStatistics />} />
-            <Route path="/brackets" element={<Brackets />} />
+            <Route path="/bracket" element={<Brackets />} />
             <Route path="/statistics" element={<Statistics />} />
             <Route path="/teamstatistics" element={<Statistics />} />
             <Route path="/competitorstatistics" element={<Statistics />} />

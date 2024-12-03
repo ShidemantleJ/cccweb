@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import data from '../../data/bracket_db.json'
 import { useNavigate } from 'react-router-dom';
+import './bracketstyle.css';
 
 const Brackets = () => {
   const navigate = useNavigate();
@@ -23,12 +24,13 @@ const Brackets = () => {
   return (
   <>
   <div className="home-header">
-    <h1>32 Team Single Elimination Bracket</h1>
+    <h1>Single Elimination Bracket</h1>
     <p>Click on any completed match to see detailed match info</p>
   </div>
+  <div>
     <div className="brackets-viewer"></div>
+  </div>
   </>
   );
 }
-
 export default Brackets;

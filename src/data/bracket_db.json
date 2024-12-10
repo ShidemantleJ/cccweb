@@ -187,7 +187,7 @@
     {
       "id": 4,
       "tournament_id": 0,
-      "name": "UT Austin (University of Texas at Austin)"
+      "name": "University of Texas at Austin"
     },
     {
       "id": 5,
@@ -202,107 +202,107 @@
     {
       "id": 7,
       "tournament_id": 0,
-      "name": "Vanderbilt University"
+      "name": "Penn State University"
     },
     {
       "id": 8,
       "tournament_id": 0,
-      "name": "Tufts University"
+      "name": "Vanderbilt University"
     },
     {
       "id": 9,
       "tournament_id": 0,
-      "name": "UC San Diego"
+      "name": "UC Davis"
     },
     {
       "id": 10,
       "tournament_id": 0,
-      "name": "UC Davis"
+      "name": "Tufts University"
     },
     {
       "id": 11,
       "tournament_id": 0,
-      "name": "Auburn University"
+      "name": "UC San Diego"
     },
     {
       "id": 12,
       "tournament_id": 0,
-      "name": "UH (University of Houston)"
+      "name": "University of Maryland"
     },
     {
       "id": 13,
       "tournament_id": 0,
-      "name": "UC Irvine"
+      "name": "Auburn University"
     },
     {
       "id": 14,
       "tournament_id": 0,
-      "name": "UNR (University of Nevada Reno)"
+      "name": "UC Santa Barbara"
     },
     {
       "id": 15,
       "tournament_id": 0,
-      "name": "NYU"
+      "name": "University of Houston"
     },
     {
       "id": 16,
       "tournament_id": 0,
-      "name": "Florida State University"
+      "name": "UC Irvine"
     },
     {
       "id": 17,
       "tournament_id": 0,
-      "name": "UNC Charlotte"
+      "name": "University of Nevada Reno"
     },
     {
       "id": 18,
       "tournament_id": 0,
-      "name": "UMBC"
+      "name": "NYU"
     },
     {
       "id": 19,
       "tournament_id": 0,
-      "name": "Rice University"
+      "name": "Florida State University"
     },
     {
       "id": 20,
       "tournament_id": 0,
-      "name": "UA (University of Alabama)"
+      "name": "UNC Charlotte"
     },
     {
       "id": 21,
       "tournament_id": 0,
-      "name": "UCF"
+      "name": "UMBC"
     },
     {
       "id": 22,
       "tournament_id": 0,
-      "name": "USC (University of Southern California)"
+      "name": "Rice University"
     },
     {
       "id": 23,
       "tournament_id": 0,
-      "name": "Miami University"
+      "name": "University of Alabama"
     },
     {
       "id": 24,
       "tournament_id": 0,
-      "name": "Mississippi State University"
+      "name": "UCF"
     },
     {
       "id": 25,
       "tournament_id": 0,
-      "name": "BYE 26"
+      "name": "University of Southern California"
     },
     {
       "id": 26,
       "tournament_id": 0,
-      "name": "BYE 27"
+      "name": "Miami University"
     },
     {
       "id": 27,
       "tournament_id": 0,
-      "name": "BYE 28"
+      "name": "Mississippi State University"
     },
     {
       "id": 28,
@@ -498,13 +498,11 @@
       "status": 2,
       "opponent1": {
         "id": 6,
-        "position": 7,
-        "result": "win"
+        "position": 7
       },
       "opponent2": {
         "id": 25,
-        "position": 26,
-        "result": "loss"
+        "position": 26
       }
     },
     {
@@ -570,13 +568,11 @@
       "status": 2,
       "opponent1": {
         "id": 5,
-        "position": 6,
-        "result": "win"
+        "position": 6
       },
       "opponent2": {
         "id": 26,
-        "position": 27,
-        "result": "loss"
+        "position": 27
       }
     },
     {
@@ -642,13 +638,11 @@
       "status": 2,
       "opponent1": {
         "id": 4,
-        "position": 5,
-        "result": "win"
+        "position": 5
       },
       "opponent2": {
         "id": 27,
-        "position": 28,
-        "result": "loss"
+        "position": 28
       }
     },
     {
@@ -722,7 +716,7 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": 6
+        "id": null
       },
       "opponent2": {
         "id": null
@@ -752,7 +746,7 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": 5
+        "id": null
       },
       "opponent2": {
         "id": null
@@ -782,7 +776,7 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": 4
+        "id": null
       },
       "opponent2": {
         "id": null

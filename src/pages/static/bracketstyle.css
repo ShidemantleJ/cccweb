@@ -15,7 +15,7 @@
     /* Sizes */
     --text-size: 0.75rem;
     --round-margin: 2vw;
-    --match-width: max(150px, 17vw);
+    --match-width: max(250px, 17vw);
     --match-horizontal-padding: 0.5vw;
     --match-vertical-padding: 0.25vw;
     --connector-border-width: 0.1vw;

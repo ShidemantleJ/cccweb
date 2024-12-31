@@ -65,7 +65,7 @@ function TeamViewer(props) {
         {matches.map((match) => (
           <MatchWidget
             match={match}
-            won={didWin(getTeamNum(teamName), match)}
+            won={didWin(getTeamNum(teamName, match), match)}
           />
         ))}
       </div>

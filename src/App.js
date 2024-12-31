@@ -17,6 +17,7 @@ import StreamStats from "./pages/currentmatch/StreamStats";
 import Footer from "./components/Footer";
 import { Box, CssBaseline } from "@mui/material";
 import { Analytics } from "@vercel/analytics/react";
+import { Rankings } from './pages/static/Rankings';
 import "./App.css";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/team/:teamNum" element={<Team />} />
               <Route path="/streamstats/:element" element={<StreamStats />} />
+              <Route path="/rankings" element={<Rankings />} />
             </Routes>
           </Box>
           <Footer />

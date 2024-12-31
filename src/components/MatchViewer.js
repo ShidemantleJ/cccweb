@@ -23,8 +23,8 @@ export default function MatchViewer(props) {
   const rawDate = new Date(match.matchDateTime);
   const date = rawDate.toLocaleDateString();
   const time = rawDate.toLocaleTimeString();
-  const setsWonT1 = getSetsWon(match.team1.teamName, match);
-  const setsWonT2 = getSetsWon(match.team2.teamName, match);
+  const setsWonT1 = getSetsWon(1, match);
+  const setsWonT2 = getSetsWon(2, match);
 
   return (
     <>

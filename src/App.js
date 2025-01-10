@@ -18,6 +18,7 @@ import Footer from "./components/Footer";
 import { Box, CssBaseline } from "@mui/material";
 import { Analytics } from "@vercel/analytics/react";
 import { Rankings } from './pages/static/Rankings';
+import { Schedule } from './pages/static/Schedule';
 import "./App.css";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
               <Route path="/team/:teamNum" element={<Team />} />
               <Route path="/streamstats/:element" element={<StreamStats />} />
               <Route path="/rankings" element={<Rankings />} />
+              <Route path="/schedule" element={<Schedule />} />
             </Routes>
           </Box>
           <Footer />

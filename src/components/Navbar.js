@@ -40,6 +40,7 @@ const Navbar = () => {
     { label: "Bracket", path: "/bracket" },
     { label: "Rankings", path: "/rankings" },
     { label: "Statistics", path: "/statistics" },
+    { label: "Schedule", path: "/schedule" },
   ];
 
   const drawerContent = (

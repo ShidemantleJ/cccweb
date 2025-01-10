@@ -11,9 +11,7 @@ function getSetsWon(teamNum, match) {
     let opponentSets = 0;
 
     for (let i = 0; i < 3; i++) {
-      if (
-        getSolvesWon(teamNum, match, i) > getSolvesWon(oppTeamNum, match, i)
-      ) {
+      if (getSolvesWon(teamNum, match, i) >= 4) {
         currentTeamSets++;
       } else {
         opponentSets++;
@@ -31,12 +29,14 @@ function getSolvesWon(teamNum, match, matchupIndex) {
     let solvesWon = [0, 0];
 
     match.team1.times[matchupIndex].forEach((t1time, i) => {
-      const t2time = match.team2.times[matchupIndex][i];
-      if (t1time === -1) solvesWon[1]++;
+      const t2time = match?.team2?.times?.[matchupIndex]?.[i];
+      if (t2time === undefined) return;
+      else if (t1time === -1) solvesWon[1]++;
       else if (t2time === -1) solvesWon[0]++;
       else if (t1time < t2time) solvesWon[0]++;
       else if (t1time > t2time) solvesWon[1]++;
     });
+    /*
     console.log(
       "For index ",
       matchupIndex,
@@ -45,9 +45,9 @@ function getSolvesWon(teamNum, match, matchupIndex) {
       " solves and team 2 won ",
       solvesWon[1]
     );
+    */
     return teamNum === 1 ? solvesWon[0] : solvesWon[1];
   } catch (e) {
-    console.log(e);
     return 0;
   }
 }

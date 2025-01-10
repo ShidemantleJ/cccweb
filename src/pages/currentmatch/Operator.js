@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { database, auth } from "../../firebase";
 import { ref, get, update, remove } from "firebase/database";
 import { onAuthStateChanged } from "firebase/auth";
+import { attachEventListeners } from "./singularliveutils";
 
 function useAdminCheck() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -79,6 +80,14 @@ const Operator = () => {
     fetchMatchData();
   }, []);
 
+  useEffect(() => {
+    const cleanup = attachEventListeners();
+
+    return () => {
+      if (cleanup) cleanup();
+    };
+  }, []);
+
   if (loading) return <h1>Loading</h1>;
   if (!isAdmin) return <h1>Access Denied, Admins Only</h1>;
 
@@ -103,7 +112,6 @@ const Operator = () => {
   };
 
   const handleTeam1NameChange = (e) => {
-    setTeam1Name(e.target.value);
     const matchRef = ref(database, "currentMatch/team1");
     update(matchRef, {
       teamName: e.target.value,
@@ -185,7 +193,8 @@ const Operator = () => {
                 <input
                   type="text"
                   value={team1Name}
-                  onChange={(e) => handleTeam1NameChange(e)}
+                  onChange={(e) => setTeam1Name(e.target.value)}
+                  onBlur={(e) => handleTeam1NameChange(e)}
                 />
               </td>
               <td>Team 2 Name:</td>
@@ -193,7 +202,8 @@ const Operator = () => {
                 <input
                   type="text"
                   value={team2Name}
-                  onChange={(e) => handleTeam2NameChange(e)}
+                  onChange={(e) => setTeam2Name(e.target.value)}
+                  onBlur={(e) => handleTeam2NameChange(e)}
                 />
               </td>
             </tr>

@@ -15,7 +15,7 @@ function tableHeader(match, i, showScramble = true) {
     const elements = [];
     const showScramble = selectedScramble !== undefined && setSelectedScramble !== undefined;
     for (let j = 0; j < 7; j++) {
-      if (match?.team1?.times?.[i]?.[j] === undefined || match?.team2?.times?.[i]?.[j] === undefined) {
+      if (match?.team1?.times?.[i]?.[j] === undefined && match?.team2?.times?.[i]?.[j] === undefined) {
         break;
       }
       let t1currTime = match?.team1?.times?.[i]?.[j];

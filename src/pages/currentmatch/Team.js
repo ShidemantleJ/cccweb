@@ -16,11 +16,13 @@ export default function Team() {
   const [currentName, setCurrentName] = useState("");
   const [currentOpponentName, setCurrentOpponentName] = useState("");
   const [scramble, setScramble] = useState("");
+  const [teamName, setTeamName] = useState("");
   const [matchData, setMatchData] = useState([]);
 
   useEffect(() => {
     const refs = {
-      matchData: ref(database, `currentMatch`),
+      matchData: ref(database, 'currentMatch'),
+      teamName: ref(database, `currentMatch/team${teamNum}/teamName`),
       teamStatus: ref(database, `currentMatch/team${teamNum}/status`),
       currentIndex: ref(database, `currentMatch/team${teamNum}/currentIndex`),
       scrambleIndex: ref(database, `currentMatch/team${teamNum}/scrambleIndex`),
@@ -40,8 +42,12 @@ export default function Team() {
 
     const unsubscribes = [
       onValue(refs.matchData, (snapshot) => {
+        setMatchData(snapshot.val());
+      }),
+
+      onValue(refs.teamName, (snapshot) => {
         const data = snapshot.val();
-        setMatchData(data);
+        setTeamName(data);
       }),
 
       onValue(refs.scramble, (snapshot) => {
@@ -96,7 +102,7 @@ export default function Team() {
     <>
       <div>
         <div>
-          <h1>Team {teamNum}</h1>
+          <h1>{teamName}</h1>
           <h2>
             Current matchup: {currentName} vs {currentOpponentName}
           </h2>

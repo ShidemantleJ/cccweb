@@ -17,6 +17,7 @@ export function JudgeInterface({ teamNum }) {
     currentName: "",
     currentOpponentName: "",
     scramble: "",
+    teamName: "",
   });
 
   // Database references
@@ -29,6 +30,7 @@ export function JudgeInterface({ teamNum }) {
     status: ref(database, `currentMatch/team${teamNum}/status`),
     scrambleIndex: ref(database, `currentMatch/team${teamNum}/scrambleIndex`),
     currentIndex: ref(database, `currentMatch/team${teamNum}/currentIndex`),
+    teamName: ref(database, `currentMatch/team${teamNum}/teamName`),
   };
 
   // Load initial data
@@ -40,6 +42,7 @@ export function JudgeInterface({ teamNum }) {
         scrambleIndexSnap,
         statusSnap,
         timesSnap,
+        teamNameSnap,
       ] = await Promise.all([
         get(dbRefs.currentMatch),
         get(dbRefs.currentIndex),
@@ -51,6 +54,7 @@ export function JudgeInterface({ teamNum }) {
             `currentMatch/team${teamNum}/times/${matchState.currentIndex}`
           )
         ),
+        get(dbRefs.teamName),
       ]);
 
       const newState = { ...matchState };
@@ -72,6 +76,9 @@ export function JudgeInterface({ teamNum }) {
         newState.times = Array(7)
           .fill("")
           .map((_, i) => timesData[i]?.toString() || "");
+      }
+      if (teamNameSnap.exists()) {
+        newState.teamName = teamNameSnap.val();
       }
 
       // Load names and scramble
@@ -207,7 +214,7 @@ export function JudgeInterface({ teamNum }) {
       const timesSnap = await get(
         ref(database, `currentMatch/team${teamNum}/times/${newIndex}`)
       );
-      
+
       const newTimes = timesSnap.exists()
         ? Array(7)
             .fill("")
@@ -237,10 +244,10 @@ export function JudgeInterface({ teamNum }) {
   // Render UI
   return (
     <div className="judge-interface">
-      <h1>
-        Team {teamNum} Judge [{getSetsWon(teamNum, matchState.currentMatch)}{" "}
+      <h2>
+        {matchState.teamName} [{getSetsWon(teamNum, matchState.currentMatch)}{" "}
         sets]
-      </h1>
+      </h2>
       <h2>
         Current matchup: {matchState.currentName} [
         {getSolvesWon(

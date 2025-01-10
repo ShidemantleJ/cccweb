@@ -1,14 +1,15 @@
-const { console } = require("firebase-functions");
-const admin = require("firebase-admin");
-const axios = require("axios");
+import { database } from "../../firebase";
+import { ref, get, update, set, onValue } from "firebase/database";
+import { getSetsWon, getSolvesWon } from "../../StatFunctions/MatchStats";
+import axios from "axios";
 
-admin.initializeApp();
-const db = admin.database();
+const db = database;
 
-const SINGULAR_API_BASE_URL =
-  "https://app.singular.live/apiv2/controlapps/6zszVnC6BgH1qPWdPsEOoW/control";
-
-const getDatabaseValue = async (path) => (await db.ref(path).get()).val();
+// Function to get a value from the database
+const getDatabaseValue = async (path) => {
+  const snapshot = await get(ref(db, path));
+  return snapshot.exists() ? snapshot.val() : null;
+};
 
 const mean = (arr) =>
   arr.length === 0
@@ -16,6 +17,9 @@ const mean = (arr) =>
     : Number((arr.reduce((sum, val) => sum + val, 0) / arr.length).toFixed(2));
 
 const sendPatchRequest = async (data) => {
+  const SLKey = await getDatabaseValue("SLKey");
+  const SINGULAR_API_BASE_URL =
+    "https://app.singular.live/apiv2/controlapps/" + SLKey + "/control";
   try {
     await axios.patch(SINGULAR_API_BASE_URL, JSON.stringify(data), {
       headers: { "Content-Type": "application/json" },
@@ -44,7 +48,8 @@ let previousSetsWon = [0, 0];
 
 async function gatherAndSendUpdates() {
   try {
-    const [
+    let [
+      currentMatch,
       team1Name,
       team2Name,
       indexToDisplay,
@@ -53,6 +58,7 @@ async function gatherAndSendUpdates() {
       team1Times,
       team2Times,
     ] = await Promise.all([
+      getDatabaseValue("/currentMatch"),
       getDatabaseValue("/currentMatch/team1/teamName"),
       getDatabaseValue("/currentMatch/team2/teamName"),
       getDatabaseValue("/currentMatch/indexToDisplay"),
@@ -62,6 +68,8 @@ async function gatherAndSendUpdates() {
       getDatabaseValue("/currentMatch/team2/times"),
     ]);
 
+    if (!indexToDisplay) indexToDisplay = 0;
+
     const team1Competitor = team1Names?.[indexToDisplay] || "Unknown";
     const team2Competitor = team2Names?.[indexToDisplay] || "Unknown";
 
@@ -70,33 +78,38 @@ async function gatherAndSendUpdates() {
     const currentSetTeam2 = team2Times?.[indexToDisplay] || [];
     let solvesWon = [0, 0];
 
-    currentSetTeam1.forEach((solve, i) => {
-      if (solve < currentSetTeam2[i] && currentSetTeam2[i] !== undefined)
-        solvesWon[0]++;
-      else if (solve > currentSetTeam2[i] && currentSetTeam2[i] !== undefined)
-        solvesWon[1]++;
-    });
+    // currentSetTeam1.forEach((solve, i) => {
+    //   if (solve < currentSetTeam2[i] && currentSetTeam2[i] !== undefined)
+    //     solvesWon[0]++;
+    //   else if (solve > currentSetTeam2[i] && currentSetTeam2[i] !== undefined)
+    //     solvesWon[1]++;
+    // });
+    solvesWon[0] = getSolvesWon(1, currentMatch, indexToDisplay);
+    solvesWon[1] = getSolvesWon(2, currentMatch, indexToDisplay);
 
     // Set calculations
     let setsWon = [0, 0];
-    const totalSets = Math.min(
-      team1Times?.length || 0,
-      team2Times?.length || 0
-    );
-    for (let i = 0; i < totalSets; i++) {
-      let team1Solves = 0,
-        team2Solves = 0;
-      for (
-        let j = 0;
-        j < Math.min(team1Times[i]?.length || 0, team2Times[i]?.length || 0);
-        j++
-      ) {
-        if (team1Times[i][j] < team2Times[i][j]) team1Solves++;
-        else if (team1Times[i][j] > team2Times[i][j]) team2Solves++;
-      }
-      if (team1Solves >= 4) setsWon[0]++;
-      else if (team2Solves >= 4) setsWon[1]++;
-    }
+    setsWon[0] = getSetsWon(1, currentMatch);
+    setsWon[1] = getSetsWon(2, currentMatch);
+
+    // const totalSets = Math.min(
+    //   team1Times?.length || 0,
+    //   team2Times?.length || 0
+    // );
+    // for (let i = 0; i < totalSets; i++) {
+    //   let team1Solves = 0,
+    //     team2Solves = 0;
+    //   for (
+    //     let j = 0;
+    //     j < Math.min(team1Times[i]?.length || 0, team2Times[i]?.length || 0);
+    //     j++
+    //   ) {
+    //     if (team1Times[i][j] < team2Times[i][j]) team1Solves++;
+    //     else if (team1Times[i][j] > team2Times[i][j]) team2Solves++;
+    //   }
+    //   if (team1Solves >= 4) setsWon[0]++;
+    //   else if (team2Solves >= 4) setsWon[1]++;
+    // }
 
     // Check for changes in setsWon and call animateSetWon
     if (
@@ -132,7 +145,7 @@ async function gatherAndSendUpdates() {
         },
       },
       {
-        subCompositionName: "match recap",
+        subCompositionName: "mainComposition",
         payload: timesPayload,
       },
     ];
@@ -174,37 +187,43 @@ async function animateSetWon(previous, current) {
   }
 }
 
-// Event Listeners
-exports.onRefresh = db.ref("/currentMatch/refresh").on("value", async () => {
-  if (!getDatabaseValue("/currentMatch/killSwitch")) {
-    await gatherAndSendUpdates();
-  }
-});
+// Function to attach listeners
+const attachEventListeners = () => {
+  console.log("event listeners attached");
+  // Listener for refresh
+  onValue(ref(db, "/currentMatch/refresh"), async (snapshot) => {
+    console.log("Data changed:", snapshot.val());
 
-exports.onIndexToDisplay = db
-  .ref("/currentMatch/indexToDisplay")
-  .on("value", async () => {
-    if (!getDatabaseValue("/currentMatch/killSwitch")) {
+    const killSwitch = await getDatabaseValue("/currentMatch/killSwitch");
+    if (!killSwitch || killSwitch === undefined) {
       await gatherAndSendUpdates();
     }
   });
 
-exports.onTeam1TimeChange = db
-  .ref("/currentMatch/team1/times")
-  .on("value", async () => {
-    if (!getDatabaseValue("/currentMatch/killSwitch")) {
+  // Listener for indexToDisplay
+  onValue(ref(db, "/currentMatch/indexToDisplay"), async (snapshot) => {
+    const killSwitch = await getDatabaseValue("/currentMatch/killSwitch");
+    if (!killSwitch || killSwitch === undefined) {
       await gatherAndSendUpdates();
     }
   });
 
-exports.onTeam2TimeChange = db
-  .ref("/currentMatch/team2/times")
-  .on("value", async () => {
-    if (!getDatabaseValue("/currentMatch/killSwitch")) {
-      console.log(
-        "killswitch = ",
-        getDatabaseValue("/currentMatch/killSwitch")
-      );
+  // Listener for team1 times
+  onValue(ref(db, "/currentMatch/team1/times"), async (snapshot) => {
+    const killSwitch = await getDatabaseValue("/currentMatch/killSwitch");
+    if (!killSwitch || killSwitch === undefined) {
       await gatherAndSendUpdates();
     }
   });
+
+  // Listener for team2 times
+  onValue(ref(db, "/currentMatch/team2/times"), async (snapshot) => {
+    const killSwitch = await getDatabaseValue("/currentMatch/killSwitch");
+    if (!killSwitch || killSwitch === undefined) {
+      console.log("killswitch =", killSwitch);
+      await gatherAndSendUpdates();
+    }
+  });
+};
+
+export { attachEventListeners };

@@ -83,8 +83,20 @@ export function JudgeInterface({ teamNum }) {
 
       // Load names and scramble
       const [nameSnap, opponentSnap, scrambleSnap] = await Promise.all([
-        get(ref(database, `currentMatch/team1/names/${newState.currentIndex}`)),
-        get(ref(database, `currentMatch/team2/names/${newState.currentIndex}`)),
+        get(
+          ref(
+            database,
+            `currentMatch/team${teamNum}/names/${newState.currentIndex}`
+          )
+        ),
+        get(
+          ref(
+            database,
+            `currentMatch/team${teamNum === 1 ? 2 : 1}/names/${
+              newState.currentIndex
+            }`
+          )
+        ),
         get(
           ref(
             database,

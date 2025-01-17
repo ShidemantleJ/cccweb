@@ -17,8 +17,8 @@ import StreamStats from "./pages/currentmatch/StreamStats";
 import Footer from "./components/Footer";
 import { Box, CssBaseline } from "@mui/material";
 import { Analytics } from "@vercel/analytics/react";
-import { Rankings } from './pages/static/Rankings';
-import { Schedule } from './pages/static/Schedule';
+import { Rankings } from "./pages/static/Rankings";
+import { Schedule } from "./pages/static/Schedule";
 import "./App.css";
 
 function App() {

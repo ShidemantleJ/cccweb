@@ -14,7 +14,7 @@ const getDatabaseValue = async (path) => {
 const mean = (arr) =>
   arr.length === 0
     ? 0
-    : Number((arr.reduce((sum, val) => sum + val, 0) / arr.length).toFixed(2));
+    : Number((arr.filter(val => val !== -1).reduce((sum, val) => sum + val, 0) / arr.filter(val => val !== -1).length).toFixed(2));
 
 const sendPatchRequest = async (data) => {
   const SLKey = await getDatabaseValue("SLKey");

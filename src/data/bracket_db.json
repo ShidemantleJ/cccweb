@@ -621,11 +621,13 @@
       "status": 2,
       "opponent1": {
         "id": 12,
-        "position": 13
+        "position": 13,
+        "result": "win"
       },
       "opponent2": {
         "id": 19,
-        "position": 20
+        "position": 20,
+        "result": "loss"
       }
     },
     {
@@ -764,7 +766,7 @@
         "id": 3
       },
       "opponent2": {
-        "id": null
+        "id": 12
       }
     },
     {

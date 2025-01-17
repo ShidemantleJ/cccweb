@@ -18,9 +18,10 @@ const Brackets = () => {
       {
         onMatchClick: (clickedMatch) => {
           console.log("a match was clicked", String(clickedMatch.id));
-          if (getMatchById(clickedMatch.id) !== undefined)
-            navigate(`/matches/${clickedMatch.id}`);
-          else alert("Match data does not exist");
+          console.log(getMatchById(clickedMatch.id));
+          // if (getMatchById(clickedMatch.id))
+          navigate(`/matches/${clickedMatch.id}`);
+          // else alert("Match data does not exist");
         },
       }
     );

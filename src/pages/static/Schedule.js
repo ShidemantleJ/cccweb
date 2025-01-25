@@ -13,8 +13,8 @@ export const Schedule = () => {
           Match Schedule
         </Typography>
         <iframe
-          src="https://calendar.google.com/calendar/embed?src=9244b1006e694dfc26b5b023846b3729b4bbb001ba2284b1c13bd52e88c8829d%40group.calendar.google.com&ctz=America%2FNew_York"
-          style={{border: 0}}
+          src="https://calendar.google.com/calendar/embed?src=9244b1006e694dfc26b5b023846b3729b4bbb001ba2284b1c13bd52e88c8829d%40group.calendar.google.com&ctz=America%2FChicago"
+          style={{ border: 0 }}
           width="100%"
           height="600"
           frameborder="0"

@@ -72,8 +72,10 @@ const Home = () => {
           >
             Latest Match VOD
           </Typography>
-          {renderTopVideo()}
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box sx={{ pb: 2 }}>
+            {renderTopVideo()}
+          </Box>
+          <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
             <Button
               variant="contained"
               sx={{
@@ -83,6 +85,13 @@ const Home = () => {
               href="https://www.youtube.com/channel/UCtDRPTxvUXYkjRDxAdNicHw?sub_confirmation=1"
             >
               Subscribe on YouTube
+            </Button>
+            <Button
+              variant="contained"
+              sx={{}}
+              href="https://docs.google.com/spreadsheets/d/18wHPsu8PX3wEHolvARbB_fVTgMpPWGV35Lg600wYdt4/edit?usp=sharing"
+            >
+              View Team Rosters
             </Button>
           </Box>
         </Paper>
@@ -99,5 +108,4 @@ const Home = () => {
       </Box>
     </Box>
   );
-};
-export default Home;
+};export default Home;

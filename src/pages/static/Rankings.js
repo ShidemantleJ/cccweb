@@ -93,6 +93,7 @@ export const Rankings = () => {
   const sortedIndividuals = getSortedIndividuals();
   return (
     <div>
+      <h1>Completed Match Data</h1>
       <h2>Team Rankings</h2>
 
       <table className="match-table">

@@ -644,11 +644,13 @@
       "status": 2,
       "opponent1": {
         "id": 4,
-        "position": 5
+        "position": 5,
+        "result": "win"
       },
       "opponent2": {
         "id": 27,
-        "position": 28
+        "position": 28,
+        "result": "loss"
       }
     },
     {
@@ -782,7 +784,7 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": null
+        "id": 4
       },
       "opponent2": {
         "id": null

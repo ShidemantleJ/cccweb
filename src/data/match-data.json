@@ -1,6 +1,107 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-01-25T12:00:00",
+      "matchId":"14",
+      "watchLink": "LZbbuhfd_ao",
+      "indexToDisplay": 2,
+      "killSwitch": true,
+      "refresh": false,
+      "scrambles": [
+        [
+          "L2 U2 R2 B' R D' R B L' D' B2 R2 L2 D' R2 U2 D' B2 L2 B2 F",
+          "U' B' F2 U' L2 B2 U' R2 U' F2 D' B2 U2 B2 L' B' L' U2 F' L R",
+          "B U' R F' R' F' R D' B U' B2 L2 B2 L2 D2 F2 U2 D' L2 U' L2",
+          "U' L' F2 U2 L F' R D' F U2 F L2 D2 L2 B' D2 F' L2 F",
+          "U F2 D2 B2 R2 F2 U2 L2 D B2 R2 U F' D L B2 R F2 L2 D'"
+        ],
+        [
+          "D' R2 U' R2 B2 D' B2 U F2 U' B2 R' F U2 R2 F' L B2 U' B' F",
+          "L' F2 U' L2 B2 U' B2 L2 B2 L2 U2 R2 U' F' R' U F2 D' B' D2 L",
+          "D B L D2 B R' U R F' U D2 B2 L2 U F2 L2 F2 D2 L2 U B2",
+          "B L' F U' F2 U L' F R' L2 B2 U F2 D' L2 U' B2 D' R2 D' F2",
+          "D2 B R' U2 B D F R D R2 L2 F B' L2 D2 F' D2 B' U2 R2 D2"
+        ],
+        [
+          "B' L2 B2 D2 B2 D F R U2 L2 B2 L2 U' L2 U' R2 D F2 D2 L",
+          "R' B L2 U' D' F' D' B2 L U2 F' R2 F' D2 B U2 B2 L2 D2 R2 F'",
+          "B' R2 F2 R2 F' R2 F R2 B2 L2 F' L' U' B' D R2 F' U2 R' U'",
+          "R U F' U' F U' L D L U2 R2 U2 R2 F' D2 F2 D2 B' R2 B2 D2",
+          "L2 B2 R' F2 L' D2 U2 R' U2 L2 B2 D2 U' L U B2 L' B U F"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Azhar Virani",
+          "Jason Lee",
+          "Jeremy Sheng"
+        ],
+        "scrambleIndex": 4,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "University of Texas at Austin",
+        "times": [
+          [
+            11.82,
+            10.5,
+            10.1,
+            8.32
+          ],
+          [
+            7.15,
+            7.69,
+            7.3,
+            9.05
+          ],
+          [
+            8.82,
+            9.21,
+            7.59,
+            9.78
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Xen Gaerlan",
+          "Joshua Winston",
+          "Max Young"
+        ],
+        "scrambleIndex": 4,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "Mississippi State University",
+        "times": [
+          [
+            45.14,
+            -1,
+            45.35,
+            -1
+          ],
+          [
+            30.38,
+            31.86,
+            40.14,
+            26.95
+          ],
+          [
+            13.93,
+            12.73,
+            10.76,
+            10.86
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-01-18T15:00:00",
       "matchId":"6",
       "watchLink": "0ocFHbVADRw",

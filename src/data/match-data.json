@@ -1,6 +1,109 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-01-25T19:00:00",
+      "matchId":"3",
+      "watchLink": "i_v1K_u0luk",
+      "indexToDisplay": 2,
+      "killSwitch": true,
+      "scrambles": [
+        [
+          "D2 L' B' L' D R2 F U2 R U2 F2 U' L2 D R2 D2 R2 B2 U R2 B2",
+          "F U2 B U2 D' B L' D B R2 U R2 L2 F2 D' B2 D R2 D2 R2 F2",
+          "R' D2 F2 D2 F D2 L2 F D2 B U2 F D' B2 F R' F2 D' B L2",
+          "R2 D2 R' F' U2 D L' U2 L2 F B2 U2 F' R2 B R2 F' R2 U2 D B",
+          "U2 F L F R' U' F2 L' F' L2 D' F2 B2 R2 D' R2 U L2 U2 R2 B2"
+        ],
+        [
+          "D' F' R' U' D' L B L2 F' U' F2 D2 F' B' L2 U2 L2 D2 B' R2 B2",
+          "F2 D' R2 F' R D' F2 D' L' U' R2 F2 U2 F2 D F2 U' L2 U' F2 U'",
+          "U R' B' D L' F' R' U2 R2 D2 L2 B' L2 U2 F D2 R2 U2 F2 L' F'",
+          "U' D B' D F' R2 B' L2 U2 D F2 U L2 F2 U B2 U' L2 D' R' F2",
+          "U' R D2 F R' D' R' L D F2 U2 F R2 B U2 D2 L2 F D2 B2 R2"
+        ],
+        [
+          "F2 B D' B' L' U2 D L F2 U' D' B2 D' F2 B2 R2 F2 R2 D' B",
+          "B2 R' F' B2 D' R U R2 L F2 U2 F' L2 F' L2 U2 F2 D2 F' D2 F'",
+          "B2 L U' F' D2 B' D' B' L B' U2 B R2 D2 R2 B2 D2 F R2 F L2",
+          "R' D2 F2 U2 L2 D2 L2 B2 U2 F2 L' D' U' F' R B L B L' R'",
+          "L2 F' D2 R2 U R2 U' F2 U' F2 U B2 L2 U' B' R U2 F' L' R' F",
+          "R U B' D' L' F U2 R' U' F2 R' F2 R2 L' U2 L' D2 R F2 U2 F2"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Marcus Kamen",
+          "Thomas Pham",
+          "Jonathan Tilahun"
+        ],
+        "scrambleIndex": 5,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "Vanderbilt University",
+        "times": [
+          [
+            8.11,
+            6.8,
+            9.48,
+            7.54
+          ],
+          [
+            9.98,
+            7.31,
+            8.63,
+            7.33
+          ],
+          [
+            9.48,
+            12.01,
+            9.13,
+            11.39,
+            8.65
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "John Shidemantle",
+          "Isak Danke",
+          "Martin Albright"
+        ],
+        "scrambleIndex": 5,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "University of Alabama",
+        "times": [
+          [
+            16.75,
+            14.48,
+            13.71,
+            13.57
+          ],
+          [
+            17.92,
+            14.5,
+            13.41,
+            12.38
+          ],
+          [
+            18.4,
+            14.37,
+            15.53,
+            10.66,
+            15.65
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-01-25T12:00:00",
       "matchId":"14",
       "watchLink": "LZbbuhfd_ao",

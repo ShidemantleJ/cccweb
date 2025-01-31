@@ -1,6 +1,113 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-01-30T18:30:00",
+      "matchId":"10",
+      "watchLink": "9S-YxrmJDDY",
+      "indexToDisplay": 2,
+      "killSwitch": true,
+      "refresh": true,
+      "scrambles": [
+        [
+          "B U L2 B2 R2 U R' F' B' L' B2 D2 B L2 B U2 F L2 F R2 B'",
+          "F' R D2 F R2 D' F B2 U2 D' F2 L2 D' F2 D F2 U R2 D F' L'",
+          "F D L2 F B L' U2 F U B' D2 R U2 F2 L2 B2 D2 R' B2 L' U2",
+          "U R2 L' D' R' F' B' L D U2 L2 B2 D2 B' D2 F' L2 F L2 D2 B2",
+          "L' U2 D' R' F R2 F' U' F2 B2 L' F2 R D2 R2 U2 R' D2 L U2"
+        ],
+        [
+          "L' F' B2 U2 R D2 L2 B2 R' D2 U2 B2 U2 R U' L R D F' L2 R'",
+          "D2 F2 U' R2 D L2 R2 B2 L2 D' F2 D F U' L' R' D' B' U' R U'",
+          "B R' L2 F2 U' B2 D' B2 D2 F2 D B2 U' B2 R' B U2 L2 R U' L",
+          "L' D' B L F' D' L B U' R2 U2 B2 U2 F2 L2 U' R2 L2 B2 L2 F",
+          "B2 L' U R' F' B' U R U2 B F2 L2 U2 F2 D' F2 U2 L2 U F2 U"
+        ],
+        [
+          "L' U' F' R F2 D' F2 L' B U R2 U2 R2 F2 R2 F2 U2 R2 D' F2 U2",
+          "R L2 F' U' D F B' U' R F2 D' B2 U2 R2 B2 U R2 D' R2 F2 U'",
+          "F' L' D' L2 B' U R F2 R2 B' U2 F R2 B R2 L2 F' L2 F2",
+          "U' B R' U F L D R2 B' U D R2 B2 L2 B2 U' B2 U2 R2 F2 R2",
+          "R' F R' L' D L F L2 U2 B2 L2 F2 L2 D' L2 D F2 R2 D2 R",
+          "F D2 F' L2 D' B' L' F2 R' U2 B' L2 B' R2 B' L2 F' R2 D2 B D2",
+          "D B' R2 D B R U B R' U' F2 R2 D' B2 D' F2 R2 F2 U2 R2 F2"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Shahir Latif",
+          "Vishwa Sankar",
+          "Justin Barker"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "Georgia Tech",
+        "times": [
+          [
+            9.84,
+            9.13,
+            8.96,
+            8.93
+          ],
+          [
+            6.58,
+            9.69,
+            10.09,
+            7.88
+          ],
+          [
+            10.35,
+            9.46,
+            11.42,
+            9.78,
+            7.7,
+            9.34
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Joey Reindl",
+          "Emery McFeeter",
+          "Harsha Paladugu"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "Miami University",
+        "times": [
+          [
+            16.31,
+            20.63,
+            17.84,
+            17.72
+          ],
+          [
+            9.1,
+            11.92,
+            14.84,
+            15.08
+          ],
+          [
+            13.53,
+            9.4,
+            10.03,
+            12.43,
+            15.08,
+            10.28
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-01-25T20:15:00",
       "matchId":"7",
       "watchLink": "TBZqJVNXj1k",

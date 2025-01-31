@@ -576,11 +576,13 @@
       "status": 2,
       "opponent1": {
         "id": 5,
-        "position": 6
+        "position": 6,
+        "result": "win"
       },
       "opponent2": {
         "id": 26,
-        "position": 27
+        "position": 27,
+        "result": "loss"
       }
     },
     {
@@ -758,7 +760,7 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": null
+        "id": 5
       },
       "opponent2": {
         "id": null

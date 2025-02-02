@@ -1,6 +1,114 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-02-01T20:30:00",
+      "matchId":"11",
+      "watchLink": "kRamku0sPQk",
+      "indexToDisplay": 2,
+      "killSwitch": true,
+      "refresh": false,
+      "scrambles": [
+        [
+          "D2 R' F B D2 B L D' U2 F2 R2 D2 R' F2 D2 L' B2 R2 B2 U2",
+          "R' L' B2 L B R F2 L U2 R2 F2 R2 U2 R2 D' B2 R2 L2 D2 L2 B",
+          "F D L2 F B L' U2 F U B' D2 R U2 F2 L2 B2 D2 R' B2 L' U2",
+          "U R2 L' D' R' F' B' L D U2 L2 B2 D2 B' D2 F' L2 F L2 D2 B2",
+          "L' U2 D' R' F R2 F' U' F2 B2 L' F2 R D2 R2 U2 R' D2 L U2"
+        ],
+        [
+          "L' F' B2 U2 R D2 L2 B2 R' D2 U2 B2 U2 R U' L R D F' L2 R'",
+          "D2 F2 U' R2 D L2 R2 B2 L2 D' F2 D F U' L' R' D' B' U' R U'",
+          "B R' L2 F2 U' B2 D' B2 D2 F2 D B2 U' B2 R' B U2 L2 R U' L",
+          "L' D' B L F' D' L B U' R2 U2 B2 U2 F2 L2 U' R2 L2 B2 L2 F",
+          "B2 L' U R' F' B' U R U2 B F2 L2 U2 F2 D' F2 U2 L2 U F2 U",
+          "B R L2 D F U2 D' B' U2 R D2 F2 R D2 B2 R' U2 L2 D2 L F"
+        ],
+        [
+          "B' U R2 F2 D2 R2 D L2 U2 R2 F2 D L2 F R D L' F' U' R D",
+          "R L2 F' U' D F B' U' R F2 D' B2 U2 R2 B2 U R2 D' R2 F2 U'",
+          "F' L' D' L2 B' U R F2 R2 B' U2 F R2 B R2 L2 F' L2 F2",
+          "U' B R' U F L D R2 B' U D R2 B2 L2 B2 U' B2 U2 R2 F2 R2",
+          "R' F R' L' D L F L2 U2 B2 L2 F2 L2 D' L2 D F2 R2 D2 R",
+          "F D2 F' L2 D' B' L' F2 R' U2 B' L2 B' R2 B' L2 F' R2 D2 B D2",
+          "D B' R2 D B R U B R' U' F2 R2 D' B2 D' F2 R2 F2 U2 R2 F2"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Thiago Han",
+          "Zachary Miller",
+          "Chris Yen"
+        ],
+        "scrambleIndex": 5,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "Tufts University",
+        "times": [
+          [
+            13.4,
+            8.8,
+            11.02,
+            9.59
+          ],
+          [
+            11.81,
+            10.73,
+            10.43,
+            10.82,
+            13.02
+          ],
+          [
+            12.33,
+            9.52,
+            6.11,
+            7.8,
+            6.84
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Jay Leveton",
+          "Udit Krishnasai",
+          "Dean Lockett"
+        ],
+        "scrambleIndex": 5,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "UMBC",
+        "times": [
+          [
+            17.52,
+            16.86,
+            16.24,
+            17.61
+          ],
+          [
+            10.05,
+            12.72,
+            9.56,
+            10.37,
+            8.32
+          ],
+          [
+            11.37,
+            10.7,
+            11.08,
+            12.18,
+            11.09
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-01-30T18:30:00",
       "matchId":"10",
       "watchLink": "9S-YxrmJDDY",

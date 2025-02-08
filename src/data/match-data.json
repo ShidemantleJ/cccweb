@@ -1,6 +1,119 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-02-08T17:00:00",
+      "matchId":"1",
+      "watchLink": "eoU36HwvbSU",
+      "indexToDisplay": 2,
+      "killSwitch": true,
+      "refresh": true,
+      "scrambles": [
+        [
+          "B' D' L2 F2 L2 F2 U F2 D F2 U2 B2 U B R' U' L2 R' F' R",
+          "R' F' B2 L F R D F U' R2 U2 B2 R' F2 L' U2 D2 F2 R F2 L",
+          "R U B' U2 D L' D' B U' F2 D2 F2 D2 L2 F R2 B U2 L2 F2 U",
+          "R F' L' B2 D2 B' L D L2 B2 U' D2 B2 U' L2 D R2 U' L2 F",
+          "F' U' B2 D2 L2 F2 L2 B2 U' B2 D' F2 U' F' D L' D U F R' D2",
+          "D' B2 U R2 D F2 D2 B2 D R2 B2 L2 F D' F D' F L' R D2"
+        ],
+        [
+          "F2 L D B2 R F B' R2 U' R2 F2 U2 R B2 D2 L U2 R' U2 L F2",
+          "F' L2 U2 L' B U R U2 F2 D L2 D' R2 D' L2 U' R2 F2 D2 L'",
+          "U R2 D2 B' D2 F' U2 B D2 R2 D2 L2 B' L' B L' R' D F' D B",
+          "D' R U2 B' U F B2 L' D L2 F R2 D2 L2 U2 F2 D2 B' D2 F' L2",
+          "R D' L U' B' U2 B' L F B U' D' F2 D R2 F2 L2 F2 B2 U B2",
+          "U2 R' F L' B L U R' B2 R' D2 R U2 R F2 L B2 R' B2 F' L"
+        ],
+        [
+          "U' R' D R' D R' D R2 B U2 L B2 R2 L' D2 L' B2 D2 R U2",
+          "F B2 R' D' B' R' L B D B R2 D2 F' L2 U2 B' L2 U2 B' D2",
+          "U2 R B2 U' R L D2 F B2 R F2 U2 R F2 L2 B2 L U2 F2 L D'",
+          "F' L2 D F' R2 L' U F D2 R F2 R L2 B2 D2 R' B2 R' F2 L' F",
+          "F R U B' R2 U2 L' U2 B' L2 D2 R2 F R2 F2 B L'",
+          "B' U2 L B' R U L R2 F2 R2 F2 L2 D2 F2 U B2 U B2 U2 R D",
+          "B2 R U R' U' F L2 F' D U2 R2 F L2 B2 L2 D2 F2 D2 F' L2 F'"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Jacob Nguyen",
+          "Derek Herrera",
+          "Thomas Tran"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "University of Houston",
+        "times": [
+          [
+            -1,
+            13.4,
+            15.14,
+            13.32,
+            18.78
+          ],
+          [
+            8.88,
+            8.81,
+            10,
+            10.01,
+            8.11
+          ],
+          [
+            8.34,
+            7.96,
+            11.09,
+            8.66,
+            12.66,
+            8.94
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "David Militante",
+          "Anthony Ahn",
+          "Alvin Liu"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "UC Irvine",
+        "times": [
+          [
+            13.72,
+            14.07,
+            10.76,
+            11.35,
+            12.42
+          ],
+          [
+            14.19,
+            18.81,
+            12.07,
+            9.23,
+            10.17
+          ],
+          [
+            10.61,
+            9.58,
+            9.58,
+            10.99,
+            11.59,
+            9.13
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-02-08T13:00:00",
       "matchId":"15",
       "watchLink": "WgIlFgQcUMg",

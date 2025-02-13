@@ -458,7 +458,7 @@
     },
     {
       "id": 4,
-      "number": 5,
+      "number": 13,
       "stage_id": 0,
       "group_id": 0,
       "round_id": 0,
@@ -477,7 +477,7 @@
     },
     {
       "id": 5,
-      "number": 6,
+      "number": 14,
       "stage_id": 0,
       "group_id": 0,
       "round_id": 0,
@@ -496,7 +496,7 @@
     },
     {
       "id": 6,
-      "number": 7,
+      "number": 15,
       "stage_id": 0,
       "group_id": 0,
       "round_id": 0,
@@ -515,7 +515,7 @@
     },
     {
       "id": 7,
-      "number": 8,
+      "number": 16,
       "stage_id": 0,
       "group_id": 0,
       "round_id": 0,
@@ -608,7 +608,7 @@
     },
     {
       "id": 12,
-      "number": 13,
+      "number": 5,
       "stage_id": 0,
       "group_id": 0,
       "round_id": 0,
@@ -627,7 +627,7 @@
     },
     {
       "id": 13,
-      "number": 14,
+      "number": 6,
       "stage_id": 0,
       "group_id": 0,
       "round_id": 0,
@@ -646,7 +646,7 @@
     },
     {
       "id": 14,
-      "number": 15,
+      "number": 7,
       "stage_id": 0,
       "group_id": 0,
       "round_id": 0,
@@ -665,7 +665,7 @@
     },
     {
       "id": 15,
-      "number": 16,
+      "number": 8,
       "stage_id": 0,
       "group_id": 0,
       "round_id": 0,
@@ -721,10 +721,10 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": 1
+        "id": 3
       },
       "opponent2": {
-        "id": 14
+        "id": 12
       }
     },
     {
@@ -736,10 +736,10 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": 6
+        "id": 4
       },
       "opponent2": {
-        "id": 9
+        "id": 11
       }
     },
     {
@@ -781,10 +781,10 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": 3
+        "id": 1
       },
       "opponent2": {
-        "id": 12
+        "id": 14
       }
     },
     {
@@ -796,10 +796,10 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": 4
+        "id": 6
       },
       "opponent2": {
-        "id": 11
+        "id": 9
       }
     },
     {

@@ -1,6 +1,115 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-02-20T21:00:00",
+      "matchId":"21",
+      "watchLink": "U08icNCqsdM",
+      "indexToDisplay": 2,
+      "killSwitch": true,
+      "scrambles": [
+        [
+          "D' R B2 R' D2 U2 B2 U2 L2 D2 L B2 R D B U' F R2 U' L U'",
+          "U L' F D2 F2 B' D B D' B2 D R2 D2 F2 B2 R2 U' B2 D R F'",
+          "F2 L2 R2 D R2 B2 R2 F2 U2 F2 D L' F' D2 U B' R' D R' F2",
+          "L2 U2 L2 F2 D R2 U B2 U' F2 U' R2 L F2 D2 B F' L' U B2 F'",
+          "D' F' R' B R D2 B R' D R2 D R2 L2 D R2 D' R",
+          "U F2 R2 U' R B2 U L2 B' L B2 R2 U L2 D2 F2 L2 D F2 D"
+        ],
+        [
+          "R B' D2 R D2 F2 L D B F2 D F2 U L2 B2 D R2 D2 R2 F'",
+          "F2 D R2 U' R2 D B2 D R2 U2 B2 R2 F' D' R F2 D2 L R' U'",
+          "F' R2 L2 D B' R F R L U2 L2 D2 B2 D2 R' F2 U2 R2 D F",
+          "U2 R2 B2 D2 B' D2 L2 F' L2 F U2 L F D' R2 U R U2 R2 F2",
+          "R' U B2 D2 L F D L B2 U' F2 R2 U2 D' R2 U2 F2 B2 L2 B' R",
+          "R D B U R' B' L D F R2 D2 R2 L2 U' F2 R2 U B2 R2 B2 D2"
+        ],
+        [
+          "F R2 B' L' B' L' F2 L' B U2 B2 L2 D' B2 U2 R2 B2 U' B2 L2 B2",
+          "R' U' L B2 U F' L U' B2 L2 F2 D F2 U2 L2 F2 D' B2 U2 B R",
+          "F R2 B U2 B2 D2 B R2 B' R2 F2 U' L' R' F2 U' B' D2 F U2",
+          "B' L2 D F D2 B U R' U2 R2 D L2 F2 D L2 U' L2 D B2 R",
+          "D2 L2 B2 D F U2 D' R B' L2 U' L2 U' B2 R2 D B2 L2 D' F2 D",
+          "D2 B' U2 F D2 F' D2 B2 L2 D2 B2 L2 U B L B' F' L2 U B2 F2"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Alfonsus Rahardjo",
+          "Graham Lively",
+          "Toby Waters"
+        ],
+        "scrambleIndex": 5,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "Penn State University",
+        "times": [
+          [
+            10.2,
+            11.54,
+            9.69,
+            11.65,
+            9.26
+          ],
+          [
+            9.38,
+            9.61,
+            10.7,
+            6.93,
+            10.47
+          ],
+          [
+            7.55,
+            7.05,
+            7.94,
+            8.13,
+            7.27
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Jonathan Tilahun",
+          "Thomas Pham",
+          "Marcus Kamen"
+        ],
+        "scrambleIndex": 5,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "Vanderbilt University",
+        "times": [
+          [
+            12.21,
+            9.57,
+            6.45,
+            7.74,
+            7.59
+          ],
+          [
+            7.41,
+            9.52,
+            9.26,
+            9.52,
+            8.64
+          ],
+          [
+            8.57,
+            6.97,
+            8.74,
+            9.31,
+            9.49
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-02-20T19:30:00",
       "matchId":"21",
       "watchLink": "-lBvI26vs4M",

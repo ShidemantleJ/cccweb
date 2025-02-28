@@ -825,7 +825,7 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": null
+        "id": 0
       },
       "opponent2": {
         "id": 8
@@ -870,7 +870,7 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": null
+        "id": 6
       },
       "opponent2": {
         "id": null

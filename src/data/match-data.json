@@ -1,6 +1,233 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-02-27T19:00:00",
+      "matchId":"23",
+      "watchLink": "NXSP9icQKqI",
+      "indexToDisplay": 2,
+      "refresh": true,
+      "scrambles": [
+        [
+          "L' B' R2 B2 D2 L2 B2 U R2 F2 D2 U' R2 D2 F' R' D U' R2 U2 L",
+          "R2 F2 R' B2 U' B' R' F' U' B2 U R2 U2 R2 L2 D' R2 F2 R2 D B",
+          "U2 L U' B R2 U' L U2 F2 R2 B2 R2 U F2 U2 B2 D' B2 F D'",
+          "L' F2 R F2 R F2 D2 U2 R U2 R' F2 U' F R' B' L2 B' U2 L F'",
+          "U L' B L F R2 F2 D' R' F D F2 U L2 D R2 U' R2 B2 D2 B2",
+          "L' U F2 D' L2 R2 B2 L2 R2 D' B2 U' L' F L' B2 R' B R",
+          "F L' D2 B U L B U2 F2 R' U2 R' L2 F2 D2 R2 B"
+        ],
+        [
+          "U2 B2 U2 F2 L' F' D' B L B2 U' L2 D F2 U2 L2 U F2 L2 B2 R2",
+          "U R' B' R U D2 F' L2 D L2 B2 L U2 D2 R' B2 U2 L2 F2",
+          "D F U D2 L2 D' R' D' B' R2 U' R2 F2 D2 F2 R2 U R2 D' R2 F2",
+          "U' F' D L' D2 F R' L' U' B2 R2 B R2 D2 F' R2 U2 L2 U2 R2 F'",
+          "B' R' F2 B' U' F U2 D B' F2 R B2 R' U2 L D2 L D2 R' D2",
+          "U' R' L' B' R L' F L D U2 R2 F U2 L2 F D2 L2 D2 B2 U2 F"
+        ],
+        [
+          "R' B2 U F L' D' R L2 U B2 D F2 R2 U D' R2 F2 R2 B' U' F2",
+          "R' L2 U B R D F2 L' U L2 D2 F L2 U2 B' L2 B' R2 L2 U2",
+          "R2 B2 L U2 B2 L B2 D2 L R' D2 U L2 F' L D2 R2 D'",
+          "R2 L2 F D' R U B R F2 U R2 U2 L2 U D2 R2 F2 D' R2 U' L",
+          "L2 U' F' D B L' F2 D B' U' L2 D2 R2 U B2 R2 L2 D L2 D' R'",
+          "U' B L2 B' R2 B L' B2 U' B2 D L2 D' R2 F2 U' L2 B2 U2 B",
+          "U' F2 R2 L B2 U D2 B R2 F2 U2 B2 R2 U' F2 D' L2 U B2 D2 L"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Yan Myo Aung",
+          "Alan Kuo",
+          "Shawn Zhuang"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "UCLA",
+        "times": [
+          [
+            9.54,
+            9.76,
+            9.4,
+            16.31,
+            11.82,
+            9.19
+          ],
+          [
+            8.11,
+            -1,
+            8.09,
+            7.37,
+            9.49
+          ],
+          [
+            7.78,
+            7.11,
+            7.03,
+            9.05,
+            9.31,
+            8.49
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Jacob Marinas",
+          "Matthias Tam",
+          "Yuki Nomura"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "UC Davis",
+        "times": [
+          [
+            10,
+            10.51,
+            10.83,
+            12.71,
+            11.4,
+            9.94
+          ],
+          [
+            8.56,
+            8.52,
+            8.34,
+            8.24,
+            10.27
+          ],
+          [
+            11.24,
+            9.41,
+            12.76,
+            8.65,
+            9.16,
+            8.5
+          ]
+        ]
+      }
+    },
+    {
+      "matchDateTime":"2025-02-27T20:15:00",
+      "matchId":"16",
+      "watchLink": "rHGb-5F5ThI",
+      "indexToDisplay": 2,
+      "refresh": true,
+      "scrambles": [
+        [
+          "U F' D R' U' L2 F' R2 F R2 F2 R' B2 R F2 L F2 U2 D2 B2 D2",
+          "R2 D L B U F2 R2 B' U' L2 B2 D F2 B2 D R2 U F2 U R2 L",
+          "R' B2 D L U F2 B D2 L2 B2 L' U2 R U2 L2 U2 F2 L F D' B2",
+          "D2 R F2 U F D2 B' U2 D' L' U R2 F2 U2 R2 F2 R2 U2 B2 D B2",
+          "D' L F2 U L U2 R D F' B2 U B2 U R2 D L2 U' L2 F2 U R2"
+        ],
+        [
+          "F2 D' L2 D' F2 L' B' D R2 F R2 L2 F2 L2 F R2 F' U2 L2 F U",
+          "D2 R' U' B' D R' U F' R L2 D2 F2 U2 D' L2 D2 R2 U' B2 R2 F2",
+          "B U2 R B' R' B2 R' U L2 F2 L2 D' L2 U' L2 D2 F2 R2 L2 F L'",
+          "F' D2 R2 U2 R' B2 L2 D2 F2 R2 F2 R' B F R' U B D2 R F2",
+          "U2 L2 U B L U2 R U D2 R2 U' R2 L2 U R2 D' L2 F2 U' B U'",
+          "F' U' B2 D' L2 U R2 B2 R2 F2 R2 D' R2 F D U2 F' L D2 F D",
+          "R D F' B L' F B D2 L U' R2 B2 D2 L2 F2 U' L2 U' L2 B2"
+        ],
+        [
+          "D' R L2 B U R2 B' R U2 L U2 R D2 L D2 F2 L2 U2 F D' B",
+          "B' U' D' F' R D' L' U' R2 F2 B2 L B2 D2 R' U2 L2 D2 F2 L2 D",
+          "R' U2 F' U' R2 F2 D' L R2 F2 U2 L2 F' R2 U2 R2 U2 F2 L2 R U2",
+          "U' R' U D R' F R2 D' F U B2 L2 D' F2 B2 U' R2 U' B2 D2",
+          "U' R2 L' F' D L' F L2 D2 F2 U2 F' U2 F L2 U2 B' U' R'",
+          "F B2 L2 B D2 B' U2 R U R2 F2 U2 D' R2 U' B2 D R2 D R2 L",
+          "R D F2 D' L B2 R2 D' U2 F' L2 D2 L2 B' L2 B' R2 F U2 F2 R"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Carter Kucala",
+          "Mihir Narayan",
+          "Zeke Mackay"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "UW-Madison",
+        "times": [
+          [
+            5.18,
+            9.21,
+            7.93,
+            8.89
+          ],
+          [
+            8.36,
+            8.18,
+            6.13,
+            8.96,
+            8.82,
+            6.79
+          ],
+          [
+            8.37,
+            6.34,
+            7.54,
+            7.39,
+            8.37,
+            6.9
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Jacob Nguyen",
+          "Thomas Tran",
+          "Derek Herrera"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "University of Houston",
+        "times": [
+          [
+            13.04,
+            11.66,
+            15.43,
+            17.9
+          ],
+          [
+            9.38,
+            -1,
+            7.59,
+            7.66,
+            8.07,
+            9.13
+          ],
+          [
+            7.48,
+            7.76,
+            7.33,
+            11.83,
+            10.32,
+            7.98
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-02-22T12:00:00",
       "matchId":"20",
       "watchLink": "POOZXxXmXNI",

@@ -1,6 +1,117 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-03-01T18:30:00",
+      "matchId":"18",
+      "watchLink": "mVKDXeWGwfs",
+      "indexToDisplay": 2,
+      "refresh": true,
+      "scrambles": [
+        [
+          "R F D B L B2 D' R2 F' L2 F2 D2 B D2 F' L2 B2 U2 L2 R D",
+          "F' R' B U' D L B R D F2 U R2 U B2 L2 F2 D L2 U' B2",
+          "R2 L B2 D2 L' F' D' U2 R2 U2 R D2 F2 R' B2 U2 L2 F2 D R",
+          "D F' L2 B2 D F' U R L' F2 L B2 R F2 L' B2 D2 F2 B2",
+          "F2 B R' D R2 L' F D2 F D R2 U R2 U2 R2 D R2 B2 L2 U2"
+        ],
+        [
+          "F' D U R2 D' L2 R2 U2 F2 U' B U2 L' D' R' U L B' L'",
+          "R D B2 L B U R' U D2 B2 R2 B2 L' B2 D2 R2 D2 R F2 D2 B",
+          "L' B2 D2 U2 F2 R' D2 U2 B2 L R2 D2 B' U B2 L F2 U2 B' D R",
+          "U2 D F2 B' U F D L2 F L2 F' D2 R2 F D2 R2 F B R2 L",
+          "U R2 U F U2 F' U' B2 L U L2 U2 R2 B2 U' F2 B2 R2 F2 D2",
+          "D F U B U B2 L D R' U2 F2 U2 L2 F2 R2 U2 B2 U' F2 R2 D2"
+        ],
+        [
+          "R2 U2 F R' D2 B R' B R2 U R2 F2 L2 U' F2 D B2 D2 F",
+          "B D B D' F L2 B F2 R' D2 R F2 R2 L U2 L F2 U2 R' F' U'",
+          "L2 B2 U R B' U2 R F L F2 R' B2 D2 L D2 L B2 L' F2 U2",
+          "F2 L U2 R' B2 R F2 L' U2 R2 F2 R' B U' B' F' D2 R' B' D' U2",
+          "D B2 D2 F2 U2 L2 D' F2 D' B2 U L D F D' R' F' U2 B' U' R2",
+          "L U' B' R' L' B' U' B R' D2 F2 R2 L2 F2 R2 U F2 U' B2 D' R'",
+          "F' D F2 D' L2 D R2 D B2 F2 U R2 U' B' D F R' U2 L2 B"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Bhuvanesh Ganta",
+          "Zachary Ochs",
+          "Kerry Creech"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "UNC Chapel Hill",
+        "times": [
+          [
+            10.83,
+            7.91,
+            10.89,
+            8.53
+          ],
+          [
+            7.85,
+            9.18,
+            8.51,
+            7.4,
+            8.15
+          ],
+          [
+            11.88,
+            8.19,
+            5.23,
+            9.59,
+            7.61,
+            7.35,
+            7.43
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Jed Silverman",
+          "Sameer Chawla",
+          "Sanzhar Beisembayev"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "misscramble": false,
+          "scrambleChecked": false
+        },
+        "teamName": "University of Maryland",
+        "times": [
+          [
+            14.48,
+            11.08,
+            14.74,
+            8.89
+          ],
+          [
+            -1,
+            8.15,
+            15.65,
+            12.62,
+            10.03
+          ],
+          [
+            9.54,
+            8.77,
+            7.1,
+            8.23,
+            7.42,
+            8.88,
+            8.95
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-02-27T19:00:00",
       "matchId":"23",
       "watchLink": "NXSP9icQKqI",

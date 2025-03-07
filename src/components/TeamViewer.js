@@ -16,7 +16,11 @@ function TeamViewer(props) {
     return <h1>Team not found</h1>;
   }
 
-  const isTeam1 = matches[0].team1.teamName === teamName;
+  const allTeamMembers = matches.reduce((members, match) => {
+    const team = match.team1.teamName === teamName ? match.team1 : match.team2;
+    return [...new Set([...members, ...team.names])];
+  }, []);
+
   matches.sort((a, b) => new Date(a.matchDateTime) - new Date(b.matchDateTime));
 
   return (
@@ -29,34 +33,17 @@ function TeamViewer(props) {
           <th>Mean Solve Time:</th>
         </thead>
         <tbody>
-          {isTeam1 &&
-            matches[0].team1.names.map((name) => (
-              <>
-                <tr
-                  key={name}
-                  onClick={() =>
-                    (window.location.href = `/competitorstatistics/${name}`)
-                  }
-                >
-                  <td>{name}</td>
-                  <td>{getMeanSolve(name).toFixed(2)}</td>
-                </tr>
-              </>
-            ))}
-          {!isTeam1 &&
-            matches[0].team2.names.map((name) => (
-              <>
-                <tr
-                  key={name}
-                  onClick={() =>
-                    (window.location.href = `/competitorstatistics/${name}`)
-                  }
-                >
-                  <td>{name}</td>
-                  <td>{getMeanSolve(name).toFixed(2)}</td>
-                </tr>
-              </>
-            ))}
+          {allTeamMembers.map((name) => (
+            <tr
+              key={name}
+              onClick={() =>
+                (window.location.href = `/competitorstatistics/${name}`)
+              }
+            >
+              <td>{name}</td>
+              <td>{getMeanSolve(name).toFixed(2)}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <h2>Matches: </h2>

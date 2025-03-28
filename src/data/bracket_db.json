@@ -865,10 +865,12 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": 2
+        "id": 2,
+        "result":"win"
       },
       "opponent2": {
-        "id": 5
+        "id": 5,
+        "result":"loss"
       }
     },
     {
@@ -912,7 +914,7 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": null
+        "id": 2
       },
       "opponent2": {
         "id": 1

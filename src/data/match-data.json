@@ -1,6 +1,123 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-03-27T20:00:00",
+      "matchId":"25",
+      "watchLink": "OXAPcvCV-Q0",
+      "indexToDisplay": 2,
+      "scrambles": [
+        [
+          "R D R' F2 R2 L U2 F' B R U2 R2 D' F2 L2 U' F2 B2 R2 U B2",
+          "R2 U' L2 F L2 D R' B L2 D' F2 L2 D L2 D' B2 D' L2 D2 L2 R'",
+          "U L D R' B' U2 L U' B2 U' R2 L2 U2 L2 U' F2 D' L2 F2 B L",
+          "D2 U2 B D2 B R2 D2 F U2 F2 U2 F D L R' B' R B2 U F' U'",
+          "R' B' L' D' F L' U' D' B R2 U D2 L2 B2 R2 U R2 F2 U2 R'",
+          "B D2 L2 D2 B' D2 B L2 F' L2 D2 F2 D F' L B' L D2 R U2 F",
+          "L' U' B' U' F' R' F R' F U' R2 U2 F2 D F2 D B2 R2 D L2 U2"
+        ],
+        [
+          "D2 B' U D2 L' F' B D B R F2 L2 U' R2 L2 D' B2 D' R2 U2 L2",
+          "F' B2 R2 D2 L F2 U2 L B2 R' B2 U2 F' L2 U' L U' R2",
+          "F' R2 L' D2 F' B2 L U2 B U' F2 D' F2 D' B2 R2 B2 L2 D F",
+          "U' F2 B2 R2 L2 B R' L2 U2 F L2 B' U2 B U2 F D2 B D2 U' R'",
+          "R2 L' B2 D F2 B R F U2 F2 L B2 R F2 L' B2 L' F2 U2 L B'",
+          "F R B2 U2 R' L' B F2 U L2 D R2 D2 B2 D B2 R2 F2 R D'",
+          "U R' B U F2 B2 L2 U' B L' U2 L2 B2 L2 U D B2 D' F2 B2 R2"
+        ],
+        [
+          "B2 L2 U' B2 R2 B2 D L R2 B' U2 F2 B' R2 B U2 R2 U2 R2 B2 U",
+          "U2 R U R2 D B2 U R2 D' B2 L2 R2 U' L2 F' R2 D' F2 U2 R' U",
+          "L D' R2 D U2 B2 D F2 U' L2 B2 F2 U' B' U L2 R' F' L' B' R'",
+          "L' D2 L U2 F2 R F2 R' U2 R2 F2 R2 F D' B F' U' F R' U2 L2",
+          "B2 D' B2 U L' B R L2 F' L2 B' R2 D2 B2 U2 F' L2 U2 F' U' B'",
+          "F' D' B2 L D2 F U' L F' B D' L2 U B2 R2 L2 D B2 D B2",
+          "L B' L2 F2 L2 D B2 D U L2 F2 R2 F2 D' L B' D' U L' U' R'"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Bhuvanesh Ganta",
+          "Zachary Ochs",
+          "Kerry Creech"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "scrambleChecked": false
+        },
+        "teamName": "UNC Chapel Hill",
+        "times": [
+          [
+            7.14,
+            10.25,
+            7.44,
+            9.43,
+            -1,
+            9.46
+          ],
+          [
+            7.64,
+            9.67,
+            7.18,
+            8.82,
+            6.26,
+            8.78
+          ],
+          [
+            8.52,
+            7.29,
+            6.69,
+            6.62,
+            8.8,
+            7.78,
+            7.69
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Azhar Virani",
+          "Jeremy Sheng",
+          "Jason Lee"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "scrambleChecked": false
+        },
+        "teamName": "University of Texas at Austin",
+        "times": [
+          [
+            8.01,
+            9.11,
+            8.94,
+            8.21,
+            8.05,
+            6.88
+          ],
+          [
+            7.35,
+            8.42,
+            8.24,
+            7.12,
+            8.63,
+            6.59
+          ],
+          [
+            7.85,
+            9.63,
+            13.23,
+            7.62,
+            7.9,
+            7.64,
+            9.39
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-03-20T21:00:00",
       "matchId":"26",
       "watchLink": "akaldpjZ1Ec",

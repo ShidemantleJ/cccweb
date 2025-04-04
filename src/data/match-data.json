@@ -1,6 +1,110 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-04-03T19:00:00",
+      "matchId":"28",
+      "watchLink": "7f1zuq1xQ58",
+      "indexToDisplay": 2,
+      "refresh": true,
+      "scrambles": [
+        [
+          "B' D F2 L' D2 L2 F2 L2 F2 L U2 R F2 B U R' D B D L",
+          "D2 F' R2 U2 L2 B D2 B2 L2 F' R2 F' D' B D L' D F L U",
+          "F R2 L2 F' R' L U2 F D L2 U2 F D2 B' U2 F R2 L2 B R2 F'",
+          "R2 U F2 L2 D B U L' F2 U2 B2 D' B2 L2 U2 R2 D R2 B2 U2 L'",
+          "D F D2 R' F B D' B' R2 U L2 U' B2 R2 D L2 D2 R2 F",
+          "U D2 B R L2 U L2 B2 L' U2 L2 F D2 B' R2 F2 D2 L2 F L"
+        ],
+        [
+          "R F' D F' R2 L' F' D' R2 B2 D L2 F2 D2 L2 F2 D F2 L' U",
+          "U2 B' D2 B2 R' B2 D' F' U L2 D' B2 U' B2 R2 D2 L2 U B2 D' F'",
+          "B' D' L' U' B R' F D F2 L' U2 R U2 R2 U2 R' D2 B2 L B",
+          "U' B2 L2 U B U2 D' L' F2 R U2 D2 F2 R2 D2 L2 U2 R F' R'",
+          "U' F2 U2 B2 L2 R' B2 R' D2 F2 U2 R2 U2 F' D F2 L' D2 B L U",
+          "B U B2 D2 R2 F' L2 F U2 R2 B2 R2 F L2 D R D2 L D2 U' F'"
+        ],
+        [
+          "D F U' B' D2 F L' R2 U B2 R2 D' B2 L2 D' B2 U' L2 U2 B' R",
+          "D' F2 B2 D2 R' D' B R2 F2 R2 D' F2 D' R2 F2 B2 U' F2 L' B'",
+          "U' B L2 F' B2 U' R2 F2 B' L' D B2 L2 D2 L2 D' R2 U' B2 U2 L2",
+          "F' R D2 F L2 U2 L2 F' D2 F R2 F R2 U2 D' R B2 F' D' L2 F'",
+          "F2 R' F2 U R' U' D2 F' U2 L' D2 F2 R2 F2 B2 R D2 L U2 B2"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Carter Kucala",
+          "Mihir Narayan",
+          "Zeke Mackay"
+        ],
+        "scrambleIndex": 4,
+        "status": {
+          "competitorMayStart": false,
+          "scrambleChecked": false
+        },
+        "teamName": "UW-Madison",
+        "times": [
+          [
+            6.77,
+            8.07,
+            6.6,
+            9.81,
+            6.34
+          ],
+          [
+            6.79,
+            6.8,
+            8.53,
+            7.16,
+            7.8
+          ],
+          [
+            7.18,
+            6.11,
+            6.86,
+            7.09
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Azhar Virani",
+          "Jason Lee",
+          "Jeremy Sheng"
+        ],
+        "scrambleIndex": 4,
+        "status": {
+          "competitorMayStart": false,
+          "scrambleChecked": false
+        },
+        "teamName": "University of Texas at Austin",
+        "times": [
+          [
+            8.51,
+            8.73,
+            8.84,
+            7.46,
+            8.38
+          ],
+          [
+            9.14,
+            7.43,
+            7.93,
+            8.93,
+            7.85
+          ],
+          [
+            8.19,
+            6.66,
+            7.42,
+            9.04
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-03-27T21:00:00",
       "matchId":"26",
       "watchLink": "FeD49W3NSAY",

@@ -34,16 +34,16 @@
       "team1": {
         "currentIndex": 2,
         "names": [
-          "CALIX",
-          "HEIDI",
-          "ETHAN"
+          "Calix Tang",
+          "Heidi Chan",
+          "Ethan Jan"
         ],
         "scrambleIndex": 4,
         "status": {
           "competitorMayStart": false,
           "scrambleChecked": false
         },
-        "teamName": "UC BERKELEY",
+        "teamName": "UC Berkeley",
         "times": [
           [
             7.13,
@@ -70,16 +70,16 @@
       "team2": {
         "currentIndex": 2,
         "names": [
-          "JACK B",
-          "JACOB",
-          "JACK P"
+          "Jack Bohning",
+          "Jacob Bennett",
+          "Jack Pfeifer"
         ],
         "scrambleIndex": 4,
         "status": {
           "competitorMayStart": false,
           "scrambleChecked": false
         },
-        "teamName": "OHIO STATE",
+        "teamName": "The Ohio State University",
         "times": [
           [
             8.68,

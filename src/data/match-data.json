@@ -1,6 +1,119 @@
 {
   "matches": [
     {
+      "matchDateTime":"2025-04-09T21:00:00",
+      "matchId":"36",
+      "watchLink": "PP0w993n71Q",
+      "indexToDisplay": 2,
+      "refresh": true,
+      "scrambles": [
+        [
+          "R2 B2 R2 B U2 B' U2 L2 U2 B2 L2 F D L R' U2 B L D' U' L",
+          "D R2 L' B D L' F U F2 R2 U2 R2 F U2 F B2 D2 L2 B'",
+          "B2 R F2 R2 B' U F D2 L' F2 L F2 D2 B2 D2 B2 L B2 R' B' L'",
+          "D2 B' U2 L2 D2 L2 D' L2 D' R2 U L2 B2 D B' U2 B L' U' B2 L2",
+          "F2 U' R U' L' F2 L2 D' B U' R2 F2 D' R2 U' R2 B2 R2 D' L2",
+          "F' L' D F2 D R2 D B2 L2 D R2 D' U2 R2 L' D L' R' B' L2 D'"
+        ],
+        [
+          "L U B2 R' F L U D B' D' F2 D2 R2 U R2 F2 U B2 U' B2 L2",
+          "D F2 U R' F' L2 D2 F' L' D2 F2 D' L2 D R2 D' F2 U R2 F2 L2",
+          "R D R' B L' F' R D2 B' D2 B D2 B2 U2 D2 L2 B' L2 F' D R",
+          "U R2 F U2 L B R B2 U L2 U2 D' F2 B2 R2 U' R2 D F",
+          "U' L F R2 D2 B' U2 R2 F' U2 R2 F' L2 F2 L U2 F L D L B'",
+          "R D2 F' U B D2 R' D2 L2 F U B2 U' F2 B2 U' F2 D B2 U' F2",
+          "R2 U' L' D2 R' U F U B' U2 F2 R2 U' R2 D' B2 U F2 L2 D2 B'"
+        ],
+        [
+          "D2 B' U' D2 L' B2 R' F B2 U B2 D' L2 U F2 U2 B2 R2 F R2",
+          "R2 U F' B' D B U D2 F U L' B2 R2 F2 D2 B2 U2 L' F2 L2 D2",
+          "B U2 L2 B R2 B R F2 R2 L2 U2 F2 B2 R2 U B2 D F R'",
+          "R2 L2 D R' F2 R' B R2 L2 U' L2 U B2 U L2 D' L2 D2 F2 R B",
+          "D R' U' D B' L U2 R' F L2 B2 D' F2 D R2 U' F2 U' B2 L2",
+          "D' R2 L2 B L' D' B' F2 L2 D B2 D' R2 U R2 F2 D2 L2 U L U2",
+          "B' U' B2 R' D F B L B U D2 F2 B2 L' F2 D2 R' F2 L F2 R"
+        ]
+      ],
+      "team1": {
+        "currentIndex": 2,
+        "names": [
+          "Jack Bohning",
+          "Jacob Bennett",
+          "Jack Pfeifer"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "scrambleChecked": false
+        },
+        "teamName": "The Ohio State University",
+        "times": [
+          [
+            6.93,
+            8.11,
+            9.63,
+            7.75,
+            8.17
+          ],
+          [
+            8.44,
+            6.58,
+            7.21,
+            10.59,
+            6.81,
+            7.75
+          ],
+          [
+            7.91,
+            7.58,
+            7.6,
+            8.17,
+            7.64,
+            7.25
+          ]
+        ]
+      },
+      "team2": {
+        "currentIndex": 2,
+        "names": [
+          "Azhar Virani",
+          "Jason Lee",
+          "Jeremy Sheng"
+        ],
+        "scrambleIndex": 6,
+        "status": {
+          "competitorMayStart": false,
+          "scrambleChecked": false
+        },
+        "teamName": "University of Texas at Austin",
+        "times": [
+          [
+            8.35,
+            8.77,
+            9.46,
+            7.94,
+            8.92
+          ],
+          [
+            9.28,
+            7.09,
+            6.55,
+            7.95,
+            11.34,
+            8.38
+          ],
+          [
+            8.75,
+            7.6,
+            8.13,
+            7.4,
+            5.9,
+            -1
+          ]
+        ]
+      }
+    },
+    {
       "matchDateTime":"2025-04-05T13:00:00",
       "matchId":"29",
       "watchLink": "3xWOhUyMdqk",

@@ -933,10 +933,12 @@
       "child_count": 0,
       "status": 0,
       "opponent1": {
-        "id": 0
+        "id": 0,
+        "result":"win"
       },
       "opponent2": {
-        "id": 1
+        "id": 1,
+        "result":"loss"
       }
     }
   ],

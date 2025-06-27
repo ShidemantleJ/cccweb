@@ -11,9 +11,6 @@ function TeamViewer(props) {
     props.matchIds.includes(match.matchId)
   );
 
-  console.log(props.matchIds);
-  console.log(matches);
-
   if (!matches) {
     return <h1>Team not found</h1>;
   }

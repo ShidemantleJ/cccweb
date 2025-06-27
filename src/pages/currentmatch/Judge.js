@@ -41,7 +41,6 @@ export default function Judge () {
             }
         });
 
-        // Clean up subscription
         return () => unsubscribe();
     }, []);
 

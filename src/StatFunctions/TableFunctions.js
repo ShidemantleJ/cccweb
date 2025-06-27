@@ -32,12 +32,7 @@ function matchupData(match, i, setSelectedScramble, selectedScramble) {
     }
     let t1currTime = match?.team1?.times?.[i]?.[j];
     let t2currTime = match?.team2?.times?.[i]?.[j];
-
-    // let team1Won =
-    //   match?.team1?.times?.[i]?.[j] < match?.team2?.times?.[i]?.[j] &&
-    //   match?.team1?.times?.[i]?.[j] !== -1
-    //     ? 1
-    //     : 0;
+    
     let team1Won = 0;
     if (t1currTime === -1) team1Won = false;
     else if (t2currTime === -1) team1Won = true;

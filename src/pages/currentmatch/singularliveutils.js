@@ -78,12 +78,6 @@ async function gatherAndSendUpdates() {
     const currentSetTeam2 = team2Times?.[indexToDisplay] || [];
     let solvesWon = [0, 0];
 
-    // currentSetTeam1.forEach((solve, i) => {
-    //   if (solve < currentSetTeam2[i] && currentSetTeam2[i] !== undefined)
-    //     solvesWon[0]++;
-    //   else if (solve > currentSetTeam2[i] && currentSetTeam2[i] !== undefined)
-    //     solvesWon[1]++;
-    // });
     solvesWon[0] = getSolvesWon(1, currentMatch, indexToDisplay);
     solvesWon[1] = getSolvesWon(2, currentMatch, indexToDisplay);
 
@@ -92,24 +86,6 @@ async function gatherAndSendUpdates() {
     setsWon[0] = getSetsWon(1, currentMatch);
     setsWon[1] = getSetsWon(2, currentMatch);
 
-    // const totalSets = Math.min(
-    //   team1Times?.length || 0,
-    //   team2Times?.length || 0
-    // );
-    // for (let i = 0; i < totalSets; i++) {
-    //   let team1Solves = 0,
-    //     team2Solves = 0;
-    //   for (
-    //     let j = 0;
-    //     j < Math.min(team1Times[i]?.length || 0, team2Times[i]?.length || 0);
-    //     j++
-    //   ) {
-    //     if (team1Times[i][j] < team2Times[i][j]) team1Solves++;
-    //     else if (team1Times[i][j] > team2Times[i][j]) team2Solves++;
-    //   }
-    //   if (team1Solves >= 4) setsWon[0]++;
-    //   else if (team2Solves >= 4) setsWon[1]++;
-    // }
 
     // Check for changes in setsWon and call animateSetWon
     if (
@@ -160,7 +136,6 @@ async function gatherAndSendUpdates() {
   }
 }
 
-// function animates sets won
 async function animateSetWon(previous, current) {
   const team1Won = current[0] > previous[0];
   const team2Won = current[1] > previous[1];
@@ -220,7 +195,6 @@ const attachEventListeners = () => {
   onValue(ref(db, "/currentMatch/team2/times"), async (snapshot) => {
     const killSwitch = await getDatabaseValue("/currentMatch/killSwitch");
     if (!killSwitch || killSwitch === undefined) {
-      console.log("killswitch =", killSwitch);
       await gatherAndSendUpdates();
     }
   });

@@ -28,9 +28,6 @@ export default function Footer () {
                 <span style={{ color: 'white' }}>|</span>
                 <a href="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</a>
             </Typography>
-            {/* <Typography variant="body2" align="center" sx={{ mt: 1 }}>
-                Site by John Shidemantle, © {new Date().getFullYear()}
-            </Typography> */}
         </Container>
         </Box>
     )

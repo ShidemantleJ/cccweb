@@ -17,8 +17,6 @@ const Brackets = () => {
       },
       {
         onMatchClick: (clickedMatch) => {
-          console.log("a match was clicked", String(clickedMatch.id));
-          console.log(getMatchById(clickedMatch.id));
           if (clickedMatch.id === 30) {
             navigate(`/matches/final`);
           } else if (getMatchById(String(clickedMatch.id)) !== undefined)

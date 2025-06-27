@@ -5,7 +5,6 @@ import { randomScrambleForEvent } from "cubing/scramble";
 import { getSolvesWon, getSetsWon } from "../../StatFunctions/MatchStats";
 
 export function JudgeInterface({ teamNum }) {
-  // Consolidated state
   const [matchState, setMatchState] = useState({
     currentMatch: [],
     times: Array(7).fill(""),
@@ -33,7 +32,6 @@ export function JudgeInterface({ teamNum }) {
     teamName: ref(database, `currentMatch/team${teamNum}/teamName`),
   };
 
-  // Load initial data
   useEffect(() => {
     const loadData = async () => {
       const [

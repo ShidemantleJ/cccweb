@@ -36,16 +36,6 @@ function getSolvesWon(teamNum, match, matchupIndex) {
       else if (t1time < t2time) solvesWon[0]++;
       else if (t1time > t2time) solvesWon[1]++;
     });
-    /*
-    console.log(
-      "For index ",
-      matchupIndex,
-      " team 1 won ",
-      solvesWon[0],
-      " solves and team 2 won ",
-      solvesWon[1]
-    );
-    */
     return teamNum === 1 ? solvesWon[0] : solvesWon[1];
   } catch (e) {
     return 0;

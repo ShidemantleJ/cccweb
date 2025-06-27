@@ -15,26 +15,12 @@ function getWcaId(competitorName) {
   return null;
 }
 
-// function getTeam(competitorName) {
-//   for (let i = 0; i < teamData.length; i++) {
-//     for (let j = 0; j < teamData[i].members.length; j++) {
-//       console.log(teamData[i].members[j][0]);
-//       if (teamData[i].members[j][0] === competitorName) {
-//         return teamData[i].schoolName;
-//       }
-//     }
-//   }
-//   return null;
-// }
-
 function getTeam(competitorName) {
   for (const match of data.matches) {
     if (match.team1.names.includes(competitorName)) {
-      console.log("member of ", match.team1.teamName);
       return match.team1.teamName;
     }
     if (match.team2.names.includes(competitorName)) {
-      console.log("member of ", match.team2.teamName);
       return match.team2.teamName;
     }
   }
@@ -52,7 +38,6 @@ export default function CompetitorViewer(props) {
   );
 
   if (getTeam(competitorName) === null) {
-    console.log(competitorName, "is a member of ", getTeam(competitorName));
     return <h1>Competitor not found</h1>;
   }
   matches.sort((a, b) => new Date(a.matchDateTime) - new Date(b.matchDateTime));
